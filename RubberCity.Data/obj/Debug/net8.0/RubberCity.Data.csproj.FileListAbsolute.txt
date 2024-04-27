@@ -1,0 +1,15 @@
+D:\RubberCityRepo\RubberCity.Data\bin\Debug\net8.0\RubberCity.Data.deps.json
+D:\RubberCityRepo\RubberCity.Data\bin\Debug\net8.0\RubberCity.Data.dll
+D:\RubberCityRepo\RubberCity.Data\bin\Debug\net8.0\RubberCity.Data.pdb
+D:\RubberCityRepo\RubberCity.Data\bin\Debug\net8.0\Domain.dll
+D:\RubberCityRepo\RubberCity.Data\bin\Debug\net8.0\Domain.pdb
+D:\RubberCityRepo\RubberCity.Data\obj\Debug\net8.0\RubberCity.Data.csproj.AssemblyReference.cache
+D:\RubberCityRepo\RubberCity.Data\obj\Debug\net8.0\RubberCity.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\RubberCityRepo\RubberCity.Data\obj\Debug\net8.0\RubberCity.Data.AssemblyInfoInputs.cache
+D:\RubberCityRepo\RubberCity.Data\obj\Debug\net8.0\RubberCity.Data.AssemblyInfo.cs
+D:\RubberCityRepo\RubberCity.Data\obj\Debug\net8.0\RubberCity.Data.csproj.CoreCompileInputs.cache
+D:\RubberCityRepo\RubberCity.Data\obj\Debug\net8.0\RubberCi.155A2999.Up2Date
+D:\RubberCityRepo\RubberCity.Data\obj\Debug\net8.0\RubberCity.Data.dll
+D:\RubberCityRepo\RubberCity.Data\obj\Debug\net8.0\refint\RubberCity.Data.dll
+D:\RubberCityRepo\RubberCity.Data\obj\Debug\net8.0\RubberCity.Data.pdb
+D:\RubberCityRepo\RubberCity.Data\obj\Debug\net8.0\ref\RubberCity.Data.dll

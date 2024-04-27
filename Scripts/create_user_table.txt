@@ -1,0 +1,19 @@
+CREATE TABLE Users
+(
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    FirstName NVARCHAR(100),
+    LastName NVARCHAR(100),
+    Email NVARCHAR(255),
+    InputPassword NVARCHAR(255),
+    PasswordSalt VARBINARY(MAX),
+    PasswordHash VARBINARY(MAX),
+    PhoneNumber NVARCHAR(50),
+    PostalCode NVARCHAR(20),
+    MemberSince DATETIME2,
+    UserRole INT,
+    NeedsHelp BIT,
+    CanHelp BIT,
+    IsLockedOut BIT,
+    IsBanned BIT,
+    IsActive BIT
+)

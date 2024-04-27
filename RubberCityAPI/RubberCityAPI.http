@@ -1,0 +1,6 @@
+@RubberCityAPI_HostAddress = http://localhost:5293
+
+GET {{RubberCityAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

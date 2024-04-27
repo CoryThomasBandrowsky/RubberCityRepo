@@ -1,0 +1,13 @@
+CREATE TABLE UserMessages
+(
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    userID INT,
+    message NVARCHAR(1000),
+    dateCreated DATETIME2,
+    needsAttention BIT,
+    urgencyLevel INT
+)
+
+ALTER TABLE UserMessages
+ADD CONSTRAINT FK_UserMessages_Users_userID
+FOREIGN KEY (userID) REFERENCES Users(ID);
