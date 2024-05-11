@@ -1,0 +1,47 @@
+.container {
+    background-color: #8B0000; /* Deep red background for the whole page */
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .welcome-text h1, .welcome-text h2 {
+    opacity: 0;
+    animation: fadeIn 5s ease-out forwards;
+  }
+  
+  .welcome-text h1 {
+    animation-delay: 0.5s;
+  }
+  
+  .welcome-text h2 {
+    animation-delay: 2.5s;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .menu-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .round-button {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    font-size: 16px;
+  }
+  

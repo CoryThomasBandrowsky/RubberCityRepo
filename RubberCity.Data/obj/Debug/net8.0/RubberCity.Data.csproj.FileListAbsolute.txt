@@ -13,3 +13,4 @@ D:\RubberCityRepo\RubberCity.Data\obj\Debug\net8.0\RubberCity.Data.dll
 D:\RubberCityRepo\RubberCity.Data\obj\Debug\net8.0\refint\RubberCity.Data.dll
 D:\RubberCityRepo\RubberCity.Data\obj\Debug\net8.0\RubberCity.Data.pdb
 D:\RubberCityRepo\RubberCity.Data\obj\Debug\net8.0\ref\RubberCity.Data.dll
+D:\RubberCityRepo\RubberCity.Data\obj\Debug\net8.0\RubberCity.Data.sourcelink.json

@@ -50,7 +50,12 @@ builder.Services.AddDbContext<RubberCityContext>(options =>
 builder.Services.AddScoped<IRepository<User>, UserRepository>(sp =>
     new UserRepository(sp.GetRequiredService<RubberCityContext>()));
 
+builder.Services.AddScoped<IRepository<HelpRequestModel>, HelpRequestRepository>(sp =>
+    new HelpRequestRepository(sp.GetRequiredService<RubberCityContext>()));
+
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<HelpRequestService>();
+
 
 
 var app = builder.Build();

@@ -15,3 +15,4 @@ D:\RubberCityRepo\RubberCity.Services\obj\Debug\net8.0\RubberCity.Services.dll
 D:\RubberCityRepo\RubberCity.Services\obj\Debug\net8.0\refint\RubberCity.Services.dll
 D:\RubberCityRepo\RubberCity.Services\obj\Debug\net8.0\RubberCity.Services.pdb
 D:\RubberCityRepo\RubberCity.Services\obj\Debug\net8.0\ref\RubberCity.Services.dll
+D:\RubberCityRepo\RubberCity.Services\obj\Debug\net8.0\RubberCity.Services.sourcelink.json

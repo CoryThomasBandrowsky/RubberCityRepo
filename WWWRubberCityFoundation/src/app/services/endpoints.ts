@@ -9,5 +9,9 @@ export const endpoints = {
 
     usersController:{
         add: 'http://localhost:30966/users/add'
+    },
+
+    helpRequestController:{
+        add: 'http://localhost:30966/helprequest/add'
     }
 }

@@ -11,6 +11,13 @@ import { UsersDeleteComponent } from './users/users-delete/users-delete.componen
 import { UsersUpdateComponent } from './users/users-update/users-update.component';
 import { UsersGetComponent } from './users/users-get/users-get.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { HelpRequestComponent } from './help-request/help-request.component';
 
 @NgModule({
   declarations: [
@@ -21,15 +28,22 @@ import { ReactiveFormsModule } from '@angular/forms';
     UsersDeleteComponent,
     UsersUpdateComponent,
     UsersGetComponent,
+    HelpRequestComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

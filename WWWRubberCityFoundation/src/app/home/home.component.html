@@ -1,2 +1,21 @@
-<button (click)="MakeTestGet()">Test</button>
-<button (click)="MakeTestUser()">Test User</button>
+<div class="container">
+    <div class="welcome-text">
+      <h1>Welcome to the Rubber City Foundation.</h1>
+      <h2>Reimagining what it means to do good.</h2>
+    </div>
+    
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Login</button>
+      <button mat-menu-item>Support</button>
+      <button mat-menu-item>About Us</button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+      <mat-icon>menu</mat-icon>
+    </button>
+  
+    <div class="button-container">
+      <button mat-raised-button class="round-button" routerLink="/need-help">I Need Help</button>
+      <button mat-raised-button class="round-button" routerLink="/want-to-help">I Want to Help</button>
+    </div>
+  </div>
+  

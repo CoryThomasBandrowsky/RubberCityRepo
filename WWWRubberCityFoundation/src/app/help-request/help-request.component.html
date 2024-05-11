@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="form-container">
+      <form [formGroup]="helpForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Phone Number</mat-label>
+          <input matInput formControlName="phoneNumber" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Postal Code</mat-label>
+          <input matInput formControlName="postalCode" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Message</mat-label>
+          <textarea matInput formControlName="messageBody" rows="6" required></textarea>
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" type="submit" [disabled]="!helpForm.valid">Submit</button>
+      </form>
+    </div>
+  </div>
+  
