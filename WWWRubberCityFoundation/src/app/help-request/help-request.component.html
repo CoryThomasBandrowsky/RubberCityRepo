@@ -1,4 +1,7 @@
 <div class="container">
+  <div class="header-text">
+    <h1>No need is too small, let us try to help.</h1>
+  </div>
     <div class="form-container">
       <form [formGroup]="helpForm" (ngSubmit)="onSubmit()">
         <mat-form-field appearance="fill">
@@ -31,8 +34,17 @@
           <textarea matInput formControlName="messageBody" rows="6" required></textarea>
         </mat-form-field>
   
-        <button mat-raised-button color="primary" type="submit" [disabled]="!helpForm.valid">Submit</button>
+        <button mat-raised-button class="form-submit-button" color="primary" type="submit" [disabled]="!helpForm.valid">Submit</button>
       </form>
     </div>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Login</button>
+      <button mat-menu-item>Contact</button>
+      <button mat-menu-item>Donate</button>
+      <button mat-menu-item>About</button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+      <mat-icon>menu</mat-icon>
+    </button>
   </div>
   

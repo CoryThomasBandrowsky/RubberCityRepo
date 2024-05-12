@@ -1,3 +1,10 @@
+-- Drop the referencing table if it exists
+DROP TABLE IF EXISTS UserMessages;
+
+-- Drop the Users table if it exists
+DROP TABLE IF EXISTS Users;
+
+-- Recreate the Users table
 CREATE TABLE Users (
     ID int NOT NULL PRIMARY KEY IDENTITY(1,1),
     FirstName nvarchar(100),
@@ -17,4 +24,15 @@ CREATE TABLE Users (
     IsActive bit NOT NULL,
     Credentialed bit NOT NULL,
     NewRegister bit NOT NULL
+);
+
+-- Recreate the Messages table
+CREATE TABLE UserMessages (
+    ID int NOT NULL PRIMARY KEY IDENTITY(1,1),
+    userID int NOT NULL,
+    message nvarchar(1000) NOT NULL,
+    dateCreated datetime2(7) NOT NULL,
+    needsAttention bit NOT NULL,
+    urgencyLevel int NOT NULL,
+    CONSTRAINT FK_Messages_Users FOREIGN KEY (userID) REFERENCES Users(ID)
 );

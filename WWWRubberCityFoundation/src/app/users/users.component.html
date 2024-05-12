@@ -1,4 +1,7 @@
 <div class="container">
+    <div class="header-text">
+        <h1>To become a helper, you'll need an account</h1>
+    </div>
     <div class="form-container">
         <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
             <mat-form-field appearance="fill">
@@ -36,7 +39,16 @@
                 <input matInput formControlName="confirmPassword" type="password" required>
             </mat-form-field>
 
-            <button mat-raised-button color="primary" type="submit" [disabled]="!userForm.valid">Submit</button>
+            <button mat-raised-button class="form-submit-button" color="primary" type="submit" [disabled]="!userForm.valid">Submit</button>
         </form>
     </div>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Login</button>
+        <button mat-menu-item>Contact</button>
+        <button mat-menu-item>Donate</button>
+        <button mat-menu-item>About</button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+        <mat-icon>menu</mat-icon>
+      </button>
 </div>
