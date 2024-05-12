@@ -1,21 +1,34 @@
 <div class="container">
-    <div class="welcome-text">
-      <h1>Welcome to the Rubber City Foundation.</h1>
-      <h2>Reimagining what it means to do good.</h2>
-    </div>
-    
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>Login</button>
-      <button mat-menu-item>Support</button>
-      <button mat-menu-item>About Us</button>
-    </mat-menu>
-    <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
-      <mat-icon>menu</mat-icon>
-    </button>
-  
-    <div class="button-container">
-      <button mat-raised-button class="round-button" routerLink="/need-help">I Need Help</button>
-      <button mat-raised-button class="round-button" routerLink="/want-to-help">I Want to Help</button>
-    </div>
+  <div class="welcome-text">
+    <h1>Welcome to the Rubber City Foundation.</h1>
+    <h2>Reimagining what it means to do good.</h2>
   </div>
-  
+
+  <div class="explanation-text">
+    <h2 class="list-header">Here's how it works</h2>
+    <p>We receive a request for help</p>
+    <p>We review your request</p>
+    <p>If we have a solution, we get in touch</p>
+    <p>If not, we share it among our network of helpers</p>
+  </div>
+
+  <div class="above-buttons-text">
+    <p>Community is key, and no need is too small. Let us try to help.</p>
+    <p>Click one of the buttons below to get started.</p>
+  </div>
+
+  <div class="button-container">
+    <button mat-raised-button class="round-button" routerLink="/need-help">I Need Help</button>
+    <button mat-raised-button class="round-button" routerLink="/users/register">I Want to Help</button>
+  </div>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Login</button>
+    <button mat-menu-item>Contact</button>
+    <button mat-menu-item>Donate</button>
+    <button mat-menu-item>About</button>
+  </mat-menu>
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+    <mat-icon>menu</mat-icon>
+  </button>
+</div>

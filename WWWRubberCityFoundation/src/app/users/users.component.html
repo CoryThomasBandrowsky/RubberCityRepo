@@ -1,1 +1,42 @@
-<app-users-add></app-users-add>
+<div class="container">
+    <div class="form-container">
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="fill">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName="lastName" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Phone Number</mat-label>
+                <input matInput formControlName="phoneNumber" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Postal Code</mat-label>
+                <input matInput formControlName="postalCode" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" type="email" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" type="password" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput formControlName="confirmPassword" type="password" required>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit" [disabled]="!userForm.valid">Submit</button>
+        </form>
+    </div>
+</div>

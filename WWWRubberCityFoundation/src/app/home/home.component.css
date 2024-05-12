@@ -1,47 +1,72 @@
 .container {
-    background-color: #8B0000; /* Deep red background for the whole page */
-    color: white;
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .welcome-text h1, .welcome-text h2 {
-    opacity: 0;
-    animation: fadeIn 5s ease-out forwards;
-  }
-  
-  .welcome-text h1 {
-    animation-delay: 0.5s;
-  }
-  
-  .welcome-text h2 {
-    animation-delay: 2.5s;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  .menu-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-  
-  .button-container {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .round-button {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    font-size: 16px;
-  }
-  
+  background-color: #8B0000; /* Deep red background for the whole page */
+  color: white;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Adjusts the distribution of space */
+  align-items: center;
+  padding: 10px 0; /* Adjust padding to give some space at the top and bottom */
+}
+
+.welcome-text h1, .welcome-text h2, .explanation-text, .above-buttons-text {
+  opacity: 0;
+  animation: fadeIn 5s ease-out forwards;
+  margin-bottom: 10px; /* Adds margin to push the text down a bit */
+  margin-top: 10%;
+}
+
+.welcome-text h1 {
+  animation-delay: 0.5s;
+}
+
+.welcome-text h2 {
+  animation-delay: 2.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.menu-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center; /* Ensures buttons are centered */
+  margin-top: 10px; /* Adds space above the buttons if needed */
+}
+
+.round-button {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  font-size: 16px;
+  margin-bottom: 20%;
+}
+
+.explanation-text {
+  padding: 0 10%; /* Keeps horizontal padding for better readability */
+  text-align: center; /* Ensures text is centered */
+  max-width: 800px; /* Limits the width of the text block */
+  margin: 20px auto; /* Centers the text block vertically and horizontally */
+  animation-delay: 3s;
+}
+
+.explanation-text p {
+  color: white; /* Ensures text color is white */
+  font-size: 16px; /* Sets font size */
+  margin-bottom: 10px; /* Adds spacing between paragraphs */
+}
+
+.above-buttons-text {
+  text-align: center; /* Ensures the text is centered */
+  margin-bottom: 10px; /* Adds spacing between this text and the buttons */
+  animation-delay: 5s;
+}

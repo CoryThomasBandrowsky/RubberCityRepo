@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HelpRequestService } from '../services/help-request.service'
-import { HelpRequestModel } from '../models/help-request-model';  // Adjust the path as necessary
+import { HelpRequestModel } from '../models/help-request-model'; 
+
 
 @Component({
   selector: 'app-help-request',
