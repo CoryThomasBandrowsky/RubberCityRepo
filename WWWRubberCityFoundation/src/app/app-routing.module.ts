@@ -3,11 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { HelpRequestComponent } from './help-request/help-request.component';
+import { HelpersDashboardComponent } from './helpers-dashboard/helpers-dashboard.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'users/register', component: UsersComponent },
   { path: 'need-help', component: HelpRequestComponent },
+  { path: 'users/register', component: UsersComponent },
+  { path: 'users/success', component: HelpRequestComponent },
+  { path: 'helpers/dashboard', component: HelpersDashboardComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' } 
 ];
 

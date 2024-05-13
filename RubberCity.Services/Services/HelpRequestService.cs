@@ -25,7 +25,6 @@ namespace RubberCity.Services.Services
         {
             return await _repo.GetAll();
         }
-
         public async Task AddHelpRequestAsync(HelpRequestModel helpRequest)
         {
             await _repo.Add(helpRequest);

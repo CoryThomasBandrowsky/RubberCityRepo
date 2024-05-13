@@ -1,6 +1,7 @@
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using RubberCity.Data.Interfaces;
 using RubberCity.Data.Repositories;
 using RubberCity.Services.Services;
@@ -53,9 +54,17 @@ builder.Services.AddScoped<IRepository<User>, UserRepository>(sp =>
 builder.Services.AddScoped<IRepository<HelpRequestModel>, HelpRequestRepository>(sp =>
     new HelpRequestRepository(sp.GetRequiredService<RubberCityContext>()));
 
+builder.Services.AddScoped<IRepository<UserMessage>, UserMessagesRepository>(sp =>
+    new UserMessagesRepository(sp.GetRequiredService<RubberCityContext>()));
+
+builder.Services.AddScoped<IRepository<Case>, CaseRepository>(sp =>
+    new CaseRepository(sp.GetRequiredService<RubberCityContext>()));
+
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<HelpRequestService>();
-
+builder.Services.AddScoped<UserMessageService>();
+builder.Services.AddScoped<DashboardService>();
+builder.Services.AddScoped<CaseService>();
 
 
 var app = builder.Build();

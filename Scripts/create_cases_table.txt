@@ -1,0 +1,18 @@
+CREATE TABLE Cases
+(
+    ID UNIQUEIDENTIFIER PRIMARY KEY,
+    UserID INT NOT NULL,
+    HelpRequestID INT NOT NULL,
+    IsActive BIT NOT NULL,
+    Summary NVARCHAR(200) NOT NULL,
+    DateCreated DATETIME NOT NULL,
+    DateClosed DATETIME NULL
+);
+
+-- Optionally, add foreign keys if the UserID and HelpRequestID are referencing other tables
+-- Make sure the referenced tables and columns exist before adding these constraints
+ALTER TABLE Cases ADD CONSTRAINT FK_Cases_Users
+FOREIGN KEY (UserID) REFERENCES Users(ID);
+
+ALTER TABLE Cases ADD CONSTRAINT FK_Cases_HelpRequests
+FOREIGN KEY (HelpRequestID) REFERENCES HelpRequests(ID);

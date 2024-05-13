@@ -13,6 +13,7 @@ export class User {
   isLockedOut: boolean;
   isBanned: boolean;
   isActive: boolean;
+  ImagePath: string;
 
   constructor(
     id: number,
@@ -28,7 +29,8 @@ export class User {
     canHelp: boolean,
     isLockedOut: boolean,
     isBanned: boolean,
-    isActive: boolean
+    isActive: boolean,
+    ImagePath: string
   ) {
     this.id = id;
     this.firstName = firstName;
@@ -44,5 +46,6 @@ export class User {
     this.isLockedOut = isLockedOut;
     this.isBanned = isBanned;
     this.isActive = isActive;
+    this.ImagePath = ImagePath;
   }
 }

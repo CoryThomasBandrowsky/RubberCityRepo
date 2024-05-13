@@ -14,6 +14,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HelpRequestComponent } from './help-request/help-request.component';
+import { UsersSuccessComponent } from '../app/users/success/success.component';
+import { HelpersDashboardComponent } from './helpers-dashboard/helpers-dashboard.component';
+import { RequestorsDashboardComponent } from './requestors-dashboard/requestors-dashboard.component'
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { HelpRequestComponent } from './help-request/help-request.component';
     AppComponent,
     HomeComponent,
     UsersComponent,
-    HelpRequestComponent
+    HelpRequestComponent,
+    UsersSuccessComponent,
+    HelpersDashboardComponent,
+    RequestorsDashboardComponent
   ],
   imports: [
     BrowserModule,

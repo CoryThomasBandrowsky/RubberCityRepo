@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../services/user.service';
+import { User } from '../models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -9,7 +12,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class UsersComponent implements OnInit {
   userForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,
+    private userService: UserService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.userForm = this.fb.group({
@@ -44,8 +50,17 @@ export class UsersComponent implements OnInit {
 
   onSubmit() {
     if (this.userForm.valid) {
-      console.log(this.userForm.value);
-      // Handle form submission, e.g., call a service
+      const formData: User = this.userForm.value;
+      this.userService.CreateUser(formData).subscribe({
+        next: (response) => {
+          console.log('Help Request Submitted:', response);
+          this.router.navigate['/users/sucess']
+        },
+        error: (error) => {
+          console.error('Error submitting help request:', error);
+          // Handle errors here, e.g., show an error message
+        }
+      });
     }
   }
 }

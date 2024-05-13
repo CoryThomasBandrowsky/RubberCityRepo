@@ -22,5 +22,6 @@ namespace Domain.Models
         public bool IsBanned { get; set; }
         public bool IsActive { get; set; }
         public bool Credentialed { get; set; }
+        public string ImagePath { get; set; }
     }
 }
