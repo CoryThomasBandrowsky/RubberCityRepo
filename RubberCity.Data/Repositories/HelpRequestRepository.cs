@@ -44,5 +44,10 @@ namespace RubberCity.Data.Repositories
             _context.Set<HelpRequestModel>().Remove(entity);
             await _context.SaveChangesAsync();
         }
+
+        public Task<IEnumerable<HelpRequestModel>> GetAllActive()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

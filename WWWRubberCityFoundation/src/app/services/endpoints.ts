@@ -13,5 +13,9 @@ export const endpoints = {
 
     helpRequestController:{
         add: 'http://localhost:30966/helprequest/add'
+    },
+
+    dashboardController:{
+        get: 'http://localhost:30966/helpers/dashboard'
     }
 }

@@ -44,5 +44,10 @@ namespace RubberCity.Data.Repositories
             _context.Set<User>().Remove(entity);
             await _context.SaveChangesAsync();
         }
+
+        public Task<IEnumerable<User>> GetAllActive()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

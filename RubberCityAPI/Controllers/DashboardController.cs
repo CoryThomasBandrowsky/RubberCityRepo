@@ -21,8 +21,15 @@ namespace RubberCityAPI.Controllers
         [HttpGet("/helpers/dashboard")]
         public async Task<IActionResult> GetAllDashboardResults(string id)
         {
-            await _dashboardService.GetAllDashboardResults(id);
-            return CreatedAtAction(nameof(GetAllDashboardResults), new { id = user.ID }, user);
+            var result = await _dashboardService.GetAllDashboardResults(id);
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest("no results found");
+            }
         }
 
     }

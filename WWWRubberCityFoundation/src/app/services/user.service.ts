@@ -10,9 +10,25 @@ import { User } from '../models/user';
 
 export class UserService {
 
+  private userKey = '';
+
   constructor(private http: HttpClient){}
 
   CreateUser(userData: User) : Observable<User> {
     return this.http.post<User>(endpoints.usersController.add, userData);
+  }
+
+  SaveState(user: User): void {
+    const userString = JSON.stringify(user);
+    sessionStorage.setItem(this.userKey, userString);
+  }
+
+  LoadState(): User | null {
+    const userString = sessionStorage.getItem(this.userKey);
+    return userString ? JSON.parse(userString) : null;
+  }
+
+  ClearState(): void {
+    sessionStorage.removeItem(this.userKey);
   }
 }

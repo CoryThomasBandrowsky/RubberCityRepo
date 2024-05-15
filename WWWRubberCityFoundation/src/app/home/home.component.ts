@@ -41,5 +41,7 @@ export class HomeComponent implements OnInit {
   MakeTestUser() {
     this.router.navigate(['/user']);
   }
-
+  navigateToDashboard(): void {
+    this.router.navigate(['/helpers/dashboard']);
+  }
 }
