@@ -35,8 +35,7 @@ namespace RubberCity.Services.Services
             CreatePasswordHash(user.InputPassword, out byte[] passwordHash, out byte[] passwordSalt);
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
-            //user.InputPassword = null;
-            
+            user.ImagePath = _appSettings.DefaultProfilePicture;            
 
             await _repo.Add(user);
         }

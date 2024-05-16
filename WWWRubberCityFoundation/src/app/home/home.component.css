@@ -3,6 +3,7 @@
   color: white;
   text-align: center;
   height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Adjusts the distribution of space */
@@ -48,7 +49,6 @@
   width: 150px;
   height: 150px;
   font-size: 16px;
-  margin-bottom: 20%;
 }
 
 .explanation-text {
@@ -67,6 +67,6 @@
 
 .above-buttons-text {
   text-align: center; /* Ensures the text is centered */
-  margin-bottom: 10px; /* Adds spacing between this text and the buttons */
+  margin-bottom: 1px; /* Adds spacing between this text and the buttons */
   animation-delay: 5s;
 }

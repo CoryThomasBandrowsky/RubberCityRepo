@@ -37,7 +37,7 @@ export class HelpRequestComponent implements OnInit {
       this.helpRequestService.CreateHelpRequest(formData).subscribe({
         next: (response) => {
           console.log('Help Request Submitted:', response);
-          this.router.navigate['help/success']
+          this.router.navigate(['help/success'])
         },
         error: (error) => {
           console.error('Error submitting help request:', error);

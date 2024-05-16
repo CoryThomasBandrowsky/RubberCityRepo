@@ -5,9 +5,34 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start; /* Align items at the top */
     align-items: center;
     padding: 10px 0;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .profile-pic {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin-left: 1%;
+  }
+  
+  .welcome-text {
+    text-align: center;
+    flex: 1;
   }
   
   .welcome-text h1, .welcome-text h2 {
@@ -62,5 +87,11 @@
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+
+  .menu-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
   }
   

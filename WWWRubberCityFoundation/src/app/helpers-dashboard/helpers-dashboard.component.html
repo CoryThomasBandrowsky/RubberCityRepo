@@ -1,14 +1,17 @@
 <div class="container">
-    <div class="welcome-text">
-      <h1>Welcome to the Helpers Dashboard</h1>
-      <h2>Here are the active cases that need your attention.</h2>
+    <div class="header">
+      <img [src]="currentUser?.ImagePath || 'assets/default-profile.png'" (click)="goToProfile()" class="profile-pic" alt="Profile Picture">
+      <div class="welcome-text">
+        <h1>Welcome to the Helpers Dashboard</h1>
+        <h2>Here are the active cases that need your attention.</h2>
+      </div>
     </div>
   
     <div *ngIf="dashboardResults && dashboardResults.length > 0; else noResults" class="dashboard-results">
       <div *ngFor="let result of dashboardResults" class="dashboard-result">
         <h3>{{ result.summary }}</h3>
         <p><strong>Created on:</strong> {{ result.dateCreated | date }}</p>
-        <p>{{ result.firstName }} {{ result.lastName}}</p>
+        <p>{{ result.firstName }} {{ result.lastName }}</p>
         <button mat-raised-button class="respond-button">Respond</button>
       </div>
     </div>
@@ -16,5 +19,17 @@
     <ng-template #noResults>
       <p>No active cases found. Check back later.</p>
     </ng-template>
+
+    <button mat-icon-button class="menu-button" [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="navigateToLogin()">Login</button>
+        <button mat-menu-item>Contact</button>
+        <button mat-menu-item>Donate</button>
+        <button mat-menu-item>About</button>
+      </mat-menu>
   </div>
+
+  
   

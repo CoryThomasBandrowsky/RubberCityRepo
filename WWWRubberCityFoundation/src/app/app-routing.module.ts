@@ -7,6 +7,7 @@ import { HelpersDashboardComponent } from './helpers-dashboard/helpers-dashboard
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { UsersSuccessComponent } from './users/success/success.component';
 import { HelpRequestSuccessComponent } from './help-request/success/success.component';
+import { UserProfileComponent } from './users/user-profile/user-profile.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'help/success', component: HelpRequestSuccessComponent },
   { path: 'users/register', component: UsersComponent },
   { path: 'users/success', component: UsersSuccessComponent },
+  { path: 'users/profile', component: UserProfileComponent },
   { path: 'login', component: AuthenticationComponent },
   { path: 'helpers/dashboard', component: HelpersDashboardComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' } 

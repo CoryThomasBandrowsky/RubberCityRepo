@@ -13,6 +13,8 @@ export class AuthenticationComponent {
   loginForm: FormGroup;
   isLoading = false;
   errorMessage: string | null = null;
+  emailBlurred = false;
+  passwordBlurred = false;
 
   constructor(
     private authService: AuthenticationService,
@@ -50,5 +52,16 @@ export class AuthenticationComponent {
         this.isLoading = false;
       }
     });
+  }
+
+  onBlur(controlName: string) {
+    if (controlName === 'email') {
+      this.emailBlurred = true;
+    } else if (controlName === 'password') {
+      this.passwordBlurred = true;
+    }
+  }
+  navigateToLogin(): void {
+    this.router.navigate(['/login']);
   }
 }

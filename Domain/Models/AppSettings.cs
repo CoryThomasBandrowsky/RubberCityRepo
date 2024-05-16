@@ -11,5 +11,6 @@ namespace Domain.Models
     {
         public string TestValue { get; set; }
         public string Environment { get; set; }
+        public string DefaultProfilePicture { get; set; }
     }
 }

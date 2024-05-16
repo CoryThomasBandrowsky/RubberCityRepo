@@ -1,4 +1,4 @@
-.login-container {
+.profile-container {
     background-color: #8B0000; /* Deep red background */
     color: white;
     text-align: center;
@@ -11,13 +11,13 @@
   }
   
   /* Welcome text styling */
-  .login-container h1 {
+  .profile-container h1 {
     margin-bottom: 20px;
     animation: fadeIn 1s ease-out forwards;
   }
   
   /* Form container styling */
-  .login-form {
+  .profile-form {
     background: white;
     padding: 20px;
     border-radius: 10px;
@@ -30,18 +30,21 @@
     align-items: center; /* Center content inside form */
   }
   
+  /* Profile picture styling */
+  .profile-picture img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  
   /* Input field styling */
-  .login-form input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
+  .profile-form input[type="file"] {
+    margin: 20px 0;
   }
   
   /* Button styling similar to other pages */
-  .login-form button {
+  .profile-form button {
     width: 100%;
     padding: 10px;
     border: none;
@@ -50,26 +53,11 @@
     color: white;
     font-size: 16px;
     cursor: pointer;
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
   }
   
   /* Button hover effect */
-  .login-form button:hover {
+  .profile-form button:hover {
     background-color: #600000;
-  }
-  
-  /* Error message styling */
-  .login-form .error-message {
-    color: #ff0000;
-    margin-top: 10px;
-  }
-  
-  /* Menu button styling */
-  .menu-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: white;
   }
   
   /* Animation for fadeIn */

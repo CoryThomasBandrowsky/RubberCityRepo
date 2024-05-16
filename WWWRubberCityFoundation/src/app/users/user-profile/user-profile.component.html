@@ -1,0 +1,14 @@
+<div class="profile-container">
+    <h1>User Profile</h1>
+    <form class="profile-form" (ngSubmit)="saveProfile()">
+      <div class="profile-picture">
+        <img [src]="user?.ImagePath || 'assets/default-profile.png'" alt="Profile Picture">
+      </div>
+      <div>
+        <label for="file">Profile Picture</label>
+        <input type="file" id="file" (change)="onImageUpload($event)">
+      </div>
+      <button type="submit">Save Profile</button>
+    </form>
+  </div>
+  
