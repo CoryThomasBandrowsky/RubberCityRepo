@@ -1,1 +1,49 @@
-<p>authentication works!</p>
+<div class="container">
+    <div class="header-text">
+      <h1>Login to Your Account</h1>
+    </div>
+    <div class="form-container">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email" required>
+          <mat-error *ngIf="loginForm.get('email').hasError('required')">
+            Email is required
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('email').hasError('email')">
+            Invalid email format
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password" required>
+          <mat-error *ngIf="loginForm.get('password').hasError('required')">
+            Password is required
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('password').hasError('minlength')">
+            Password must be at least 6 characters
+          </mat-error>
+        </mat-form-field>
+  
+        <button mat-raised-button class="form-submit-button" color="primary" type="submit" [disabled]="!loginForm.valid || isLoading">Login</button>
+      </form>
+      <div *ngIf="errorMessage" class="error-message">
+        <mat-card class="error-card">
+          <mat-card-content>
+            {{ errorMessage }}
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Login</button>
+      <button mat-menu-item>Contact</button>
+      <button mat-menu-item>Donate</button>
+      <button mat-menu-item>About</button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  

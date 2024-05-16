@@ -24,10 +24,10 @@ export class UsersComponent implements OnInit {
       phoneNumber: ['', Validators.required],
       postalCode: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
+      inputPassword: ['', [Validators.required, Validators.minLength(8)]],
       confirmPassword: ['']
     }, {
-      validator: this.mustMatch('password', 'confirmPassword')
+      validator: this.mustMatch('inputPassword', 'confirmPassword')
     });
   }
 
@@ -51,6 +51,7 @@ export class UsersComponent implements OnInit {
   onSubmit() {
     if (this.userForm.valid) {
       const formData: User = this.userForm.value;
+      formData.ImagePath = "na";
       this.userService.CreateUser(formData).subscribe({
         next: (response) => {
           console.log('Help Request Submitted:', response);

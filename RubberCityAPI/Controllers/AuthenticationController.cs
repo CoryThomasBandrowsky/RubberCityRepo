@@ -15,10 +15,10 @@ namespace RubberCityAPI.Controllers
         {
             _authService = authService;
         }
-
-        public IActionResult Login(AuthenticationRequest request)
+        [HttpPost("/login")]
+        public async Task<IActionResult> Login(AuthenticationRequest request)
         {
-            if (_authService.ValidateUser(request))
+            if (await _authService.ValidateUser(request))
             {
                 // User authenticated successfully
                 return Ok("Login successful");

@@ -1,10 +1,12 @@
 ﻿using Domain.Enums;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Models
 {
     public class User
     {
+        [Key]
         public int ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -22,6 +24,7 @@ namespace Domain.Models
         public bool IsBanned { get; set; }
         public bool IsActive { get; set; }
         public bool Credentialed { get; set; }
+        public bool NewRegister { get; set; }
         public string ImagePath { get; set; }
     }
 }

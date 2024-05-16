@@ -18,7 +18,7 @@ import { UsersSuccessComponent } from '../app/users/success/success.component';
 import { HelpersDashboardComponent } from './helpers-dashboard/helpers-dashboard.component';
 import { RequestorsDashboardComponent } from './requestors-dashboard/requestors-dashboard.component';
 import { AuthenticationComponent } from './authentication/authentication.component'
-
+import { MatCardModule } from '@angular/material/card'
 
 @NgModule({
   declarations: [
@@ -40,7 +40,8 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     MatMenuModule,
     MatIconModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
   ],
   providers: [
     provideClientHydration(),

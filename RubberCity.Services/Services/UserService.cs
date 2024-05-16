@@ -35,7 +35,8 @@ namespace RubberCity.Services.Services
             CreatePasswordHash(user.InputPassword, out byte[] passwordHash, out byte[] passwordSalt);
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
-            user.InputPassword = null;
+            //user.InputPassword = null;
+            
 
             await _repo.Add(user);
         }

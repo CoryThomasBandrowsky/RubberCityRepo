@@ -17,5 +17,9 @@ export const endpoints = {
 
     dashboardController:{
         get: 'http://localhost:30966/helpers/dashboard'
+    },
+    
+    authenticationController:{
+        login: 'http://localhost:30966/authentication/login'
     }
 }
