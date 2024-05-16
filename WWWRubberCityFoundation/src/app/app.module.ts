@@ -16,7 +16,8 @@ import { MatInputModule } from '@angular/material/input';
 import { HelpRequestComponent } from './help-request/help-request.component';
 import { UsersSuccessComponent } from '../app/users/success/success.component';
 import { HelpersDashboardComponent } from './helpers-dashboard/helpers-dashboard.component';
-import { RequestorsDashboardComponent } from './requestors-dashboard/requestors-dashboard.component'
+import { RequestorsDashboardComponent } from './requestors-dashboard/requestors-dashboard.component';
+import { AuthenticationComponent } from './authentication/authentication.component'
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { RequestorsDashboardComponent } from './requestors-dashboard/requestors-
     HelpRequestComponent,
     UsersSuccessComponent,
     HelpersDashboardComponent,
-    RequestorsDashboardComponent
+    RequestorsDashboardComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,

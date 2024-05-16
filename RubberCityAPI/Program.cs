@@ -48,7 +48,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<RubberCityContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("RubberCityMaster")));
 
-builder.Services.AddScoped<IRepository<User>, UserRepository>(sp =>
+builder.Services.AddScoped<IUserRepository<User>, UserRepository>(sp =>
     new UserRepository(sp.GetRequiredService<RubberCityContext>()));
 
 builder.Services.AddScoped<IRepository<HelpRequestModel>, HelpRequestRepository>(sp =>
@@ -65,6 +65,7 @@ builder.Services.AddScoped<HelpRequestService>();
 builder.Services.AddScoped<UserMessageService>();
 builder.Services.AddScoped<DashboardService>();
 builder.Services.AddScoped<CaseService>();
+builder.Services.AddScoped<AuthenticationService>();
 
 
 var app = builder.Build();

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RubberCity.Data.Repositories
 {
-    public class UserRepository : IRepository<User>
+    public class UserRepository : IUserRepository<User>
     {
         private readonly DbContext _context;
 
@@ -48,6 +48,11 @@ namespace RubberCity.Data.Repositories
         public Task<IEnumerable<User>> GetAllActive()
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<User> GetUserByEmail(string email)
+        {
+            return await _context.Set<User>().FindAsync(email);
         }
     }
 }
