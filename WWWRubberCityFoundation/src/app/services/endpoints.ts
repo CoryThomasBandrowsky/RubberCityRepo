@@ -20,6 +20,6 @@ export const endpoints = {
     },
     
     authenticationController:{
-        login: 'http://localhost:30966/authentication/login'
+        login: 'http://localhost:30966/login'
     }
 }

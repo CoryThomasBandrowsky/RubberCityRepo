@@ -52,7 +52,7 @@ namespace RubberCity.Data.Repositories
 
         public async Task<User> GetUserByEmail(string email)
         {
-            return await _context.Set<User>().FindAsync(email);
+            return await _context.Set<User>().FirstOrDefaultAsync(u => u.Email == email);
         }
     }
 }
