@@ -5,12 +5,15 @@ import { UsersComponent } from './users/users.component';
 import { HelpRequestComponent } from './help-request/help-request.component';
 import { HelpersDashboardComponent } from './helpers-dashboard/helpers-dashboard.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { UsersSuccessComponent } from './users/success/success.component';
+import { HelpRequestSuccessComponent } from './help-request/success/success.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'need-help', component: HelpRequestComponent },
+  { path: 'help', component: HelpRequestComponent },
+  { path: 'help/success', component: HelpRequestSuccessComponent },
   { path: 'users/register', component: UsersComponent },
-  { path: 'users/success', component: HelpRequestComponent },
+  { path: 'users/success', component: UsersSuccessComponent },
   { path: 'login', component: AuthenticationComponent },
   { path: 'helpers/dashboard', component: HelpersDashboardComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' } 

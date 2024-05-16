@@ -1,1 +1,20 @@
-<p>helpers-dashboard works!</p>
+<div class="container">
+    <div class="welcome-text">
+      <h1>Welcome to the Helpers Dashboard</h1>
+      <h2>Here are the active cases that need your attention.</h2>
+    </div>
+  
+    <div *ngIf="dashboardResults && dashboardResults.length > 0; else noResults" class="dashboard-results">
+      <div *ngFor="let result of dashboardResults" class="dashboard-result">
+        <h3>{{ result.summary }}</h3>
+        <p><strong>Created on:</strong> {{ result.dateCreated | date }}</p>
+        <p>{{ result.firstName }} {{ result.lastName}}</p>
+        <button mat-raised-button class="respond-button">Respond</button>
+      </div>
+    </div>
+  
+    <ng-template #noResults>
+      <p>No active cases found. Check back later.</p>
+    </ng-template>
+  </div>
+  

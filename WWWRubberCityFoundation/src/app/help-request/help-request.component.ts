@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HelpRequestService } from '../services/help-request.service'
 import { HelpRequestModel } from '../models/help-request-model'; 
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,8 @@ export class HelpRequestComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private helpRequestService: HelpRequestService  // Inject the service
+    private helpRequestService: HelpRequestService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -35,7 +37,7 @@ export class HelpRequestComponent implements OnInit {
       this.helpRequestService.CreateHelpRequest(formData).subscribe({
         next: (response) => {
           console.log('Help Request Submitted:', response);
-          // Handle response here, e.g., show a success message or redirect
+          this.router.navigate['help/success']
         },
         error: (error) => {
           console.error('Error submitting help request:', error);

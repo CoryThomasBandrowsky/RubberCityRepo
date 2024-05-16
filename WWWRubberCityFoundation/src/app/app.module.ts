@@ -18,7 +18,8 @@ import { UsersSuccessComponent } from '../app/users/success/success.component';
 import { HelpersDashboardComponent } from './helpers-dashboard/helpers-dashboard.component';
 import { RequestorsDashboardComponent } from './requestors-dashboard/requestors-dashboard.component';
 import { AuthenticationComponent } from './authentication/authentication.component'
-import { MatCardModule } from '@angular/material/card'
+import { MatCardModule } from '@angular/material/card';
+import { HelpRequestSuccessComponent } from './help-request/success/success.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MatCardModule } from '@angular/material/card'
     UsersSuccessComponent,
     HelpersDashboardComponent,
     RequestorsDashboardComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    HelpRequestSuccessComponent
   ],
   imports: [
     BrowserModule,

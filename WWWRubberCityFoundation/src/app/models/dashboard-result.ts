@@ -1,22 +1,22 @@
 export class DashboardResult {
-    UserID: number;
-    FirstName: string;
-    LastName: string;
-    Summary: string;
-    DateCreated: Date;
+    userID: number;
+    firstName: string;
+    lastName: string;
+    summary: string;
+    dateCreated: Date;
   
     constructor(
-      UserID: number,
-      FirstName: string,
-      LastName: string,
-      Summary: string,
-      DateCreated: Date
+      userID: number,
+      firstName: string,
+      lastName: string,
+      summary: string,
+      dateCreated: Date
     ) {
-      this.UserID = UserID;
-      this.FirstName = FirstName;
-      this.LastName = LastName;
-      this.Summary = Summary;
-      this.DateCreated = DateCreated;
+      this.userID = userID;
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.summary = summary;
+      this.dateCreated = dateCreated;
     }
   }
   

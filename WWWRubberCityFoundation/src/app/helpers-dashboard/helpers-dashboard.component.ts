@@ -3,6 +3,7 @@ import { DashboardService } from '../services/dashboard.service';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user';
+import { DashboardResult } from '../models/dashboard-result';
 
 @Component({
   selector: 'app-helpers-dashboard',
@@ -12,6 +13,7 @@ import { User } from '../models/user';
 export class HelpersDashboardComponent implements OnInit {
 
   currentUser: User;
+  dashboardResults: DashboardResult[];
 
   constructor(private dashboardService: DashboardService,
     private userService: UserService,
@@ -19,28 +21,22 @@ export class HelpersDashboardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    
-
     this.currentUser = this.userService.LoadState();
-
-    this.dashboardService.GetDashboardResults(1).subscribe({
-      next: (response) => {
-        console.log('Help Request Submitted:', response);
-        this.router.navigate['/helpers/dashboard']
-      },
-      error: (error) => {
-        console.error('Error submitting help request:', error);
-        // Handle errors here, e.g., show an error message
-      }});
-
-    if(this.currentUser != null)
-    {
-
-    }
-    else
-    {
-      return;
+  
+    if (this.currentUser != undefined) {
+      this.dashboardService.GetDashboardResults(this.currentUser.id).subscribe({
+        next: (response) => {
+          this.dashboardResults = response;
+        },
+        error: (error) => {
+          console.error('Error fetching dashboard results:', error);
+        }
+      });
+    } else {
+      // Redirect to login or show an error message
+      this.router.navigate(['/login']);
     }
   }
+  
 
 }

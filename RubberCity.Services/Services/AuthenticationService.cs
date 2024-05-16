@@ -18,15 +18,24 @@ namespace RubberCity.Services.Services
             _userService = userService;
         }
 
-        public async Task<bool> ValidateUser(AuthenticationRequest request)
+        public async Task<(bool valid, User user)> ValidateUser(AuthenticationRequest request)
         {
             var user = await _userService.GetUserByEmail(request.Email);
             if (user == null)
             {
-                return false;
+                return (false, null);
             }
 
-            return VerifyPassword(request.Password, user.PasswordHash, user.PasswordSalt);
+            var valid = VerifyPassword(request.Password, user.PasswordHash, user.PasswordSalt);
+
+            if (valid)
+            {
+                return (true, user);
+            }
+            else
+            {
+                return (false, null);
+            }
         }
 
         private bool VerifyPassword(string password, byte[] storedHash, byte[] storedSalt)

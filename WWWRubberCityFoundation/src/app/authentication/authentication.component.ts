@@ -37,10 +37,12 @@ export class AuthenticationComponent {
     const loginData = this.loginForm.value;
     this.authService.login(loginData).subscribe({
       next:(response) => {
-        console.log('Login successful:', response);
-        this.userService.SaveState(response);
-        this.router.navigate['/helpers/dashboard']
-        this.isLoading = false;
+        if(response.valid)
+          {
+            this.userService.SaveState(response.user);
+            this.router.navigate(['helpers/dashboard'])
+            this.isLoading = false;
+          }
       },
       error:(error) => {
         console.error('Login failed:', error);
