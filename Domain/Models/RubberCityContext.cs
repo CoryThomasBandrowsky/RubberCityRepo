@@ -8,4 +8,8 @@ public class RubberCityContext : DbContext
     { }
 
     public DbSet<User> Users { get; set; }
+    public DbSet<HelpRequestModel> HelpRequests { get; set; }
+    public DbSet<UserMessage> UserMessage { get; set; }
+    public DbSet<Case> Case { get; set; }
+
 }

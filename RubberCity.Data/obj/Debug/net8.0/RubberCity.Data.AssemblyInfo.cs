@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RubberCity.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db8a38f42132a0ac7a03d7bcd3a7a689a6db404c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f77fbf695b5994d3eabd60d1ee229f735a56363a")]
 [assembly: System.Reflection.AssemblyProductAttribute("RubberCity.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RubberCity.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

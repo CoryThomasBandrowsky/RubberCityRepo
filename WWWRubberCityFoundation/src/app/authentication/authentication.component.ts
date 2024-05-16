@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from '../services/authentication.service';
+import { UserService } from '../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-authentication',
@@ -14,6 +16,8 @@ export class AuthenticationComponent {
 
   constructor(
     private authService: AuthenticationService,
+    private userService: UserService,
+    private router: Router,
     private fb: FormBuilder
   ) {
     this.loginForm = this.fb.group({
@@ -34,7 +38,8 @@ export class AuthenticationComponent {
     this.authService.login(loginData).subscribe({
       next:(response) => {
         console.log('Login successful:', response);
-        // Handle successful login (e.g., store token, navigate to another page)
+        this.userService.SaveState(response);
+        this.router.navigate['/helpers/dashboard']
         this.isLoading = false;
       },
       error:(error) => {
