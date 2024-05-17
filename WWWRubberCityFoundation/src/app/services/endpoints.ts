@@ -29,5 +29,13 @@ export const endpoints = {
         update:'http://localhost:30966/events/update',
         delete:'http://localhost:30966/events/delete',
         add: 'http://localhost:30966/events/add'
+    },
+
+    donationsController:{
+        getAll:'http://localhost:30966/donations/getAll',
+        getByID:'http://localhost:30966/donations/getByID',
+        update:'http://localhost:30966/donations/update',
+        delete:'http://localhost:30966/donations/delete',
+        add: 'http://localhost:30966/donations/add'
     }
 }

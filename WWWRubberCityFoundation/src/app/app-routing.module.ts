@@ -10,6 +10,7 @@ import { HelpRequestSuccessComponent } from './help-request/success/success.comp
 import { UserProfileComponent } from './users/user-profile/user-profile.component';
 import { EventsComponent } from './events/events.component';
 import { ContactComponent } from './contact/contact.component';
+import { DonateComponent } from './donate/donate.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'helpers/dashboard', component: HelpersDashboardComponent },
   { path: 'events', component: EventsComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'donate', component: DonateComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' } 
 ];
 

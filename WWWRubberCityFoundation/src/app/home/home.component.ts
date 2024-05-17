@@ -52,4 +52,8 @@ export class HomeComponent implements OnInit {
   navigateToContact(): void{
     this.router.navigate(['/contact'])
   }
+
+  navigateToDonate(): void{
+    this.router.navigate(['/donate'])
+  }
 }

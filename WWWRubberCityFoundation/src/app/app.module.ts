@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -23,6 +23,8 @@ import { HelpRequestSuccessComponent } from './help-request/success/success.comp
 import { UserProfileComponent } from './users/user-profile/user-profile.component';
 import { EventsComponent } from './events/events.component';
 import { ContactComponent } from './contact/contact.component';
+import { DonateComponent } from './donate/donate.component';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { ContactComponent } from './contact/contact.component';
     HelpRequestSuccessComponent,
     UserProfileComponent,
     EventsComponent,
-    ContactComponent
+    ContactComponent,
+    DonateComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ import { ContactComponent } from './contact/contact.component';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

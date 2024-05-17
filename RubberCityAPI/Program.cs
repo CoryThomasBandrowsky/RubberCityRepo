@@ -38,7 +38,6 @@ builder.Services.AddCors(options =>
                       });
 });
 
-
 var connectionString = configuration.GetConnectionString("RubberCityMaster");
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("Values"));
 builder.Services.AddControllers();
@@ -63,6 +62,9 @@ builder.Services.AddScoped<IRepository<Case>, CaseRepository>(sp =>
 builder.Services.AddScoped<IEventRepository<Event>, EventRepository>(sp =>
     new EventRepository(sp.GetRequiredService<RubberCityContext>()));
 
+builder.Services.AddScoped<IDonationRepository<Donation>, DonationRepository>(sp =>
+    new DonationRepository(sp.GetRequiredService<RubberCityContext>()));
+
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<HelpRequestService>();
 builder.Services.AddScoped<UserMessageService>();
@@ -70,7 +72,7 @@ builder.Services.AddScoped<DashboardService>();
 builder.Services.AddScoped<CaseService>();
 builder.Services.AddScoped<AuthenticationService>();
 builder.Services.AddScoped<EventService>();
-
+builder.Services.AddScoped<DonationService>();
 
 var app = builder.Build();
 app.UseHttpsRedirection();
@@ -85,4 +87,5 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 app.Run();
