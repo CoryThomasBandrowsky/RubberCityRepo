@@ -22,6 +22,7 @@ import { MatCardModule } from '@angular/material/card';
 import { HelpRequestSuccessComponent } from './help-request/success/success.component';
 import { UserProfileComponent } from './users/user-profile/user-profile.component';
 import { EventsComponent } from './events/events.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { EventsComponent } from './events/events.component';
     AuthenticationComponent,
     HelpRequestSuccessComponent,
     UserProfileComponent,
-    EventsComponent
+    EventsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

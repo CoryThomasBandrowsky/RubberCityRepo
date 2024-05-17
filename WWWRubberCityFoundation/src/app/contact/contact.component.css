@@ -1,0 +1,78 @@
+.container {
+    background-color: #8B0000; /* Deep red background */
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items at the top */
+    align-items: center;
+    padding: 10px 0;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .welcome-text {
+    text-align: center;
+    flex: 1;
+  }
+  
+  .welcome-text h1, .welcome-text h2 {
+    opacity: 0;
+    animation: fadeIn 5s ease-out forwards;
+    margin-bottom: 10px;
+    margin-top: 10%;
+  }
+  
+  .welcome-text h1 {
+    animation-delay: 0.5s;
+  }
+  
+  .welcome-text h2 {
+    animation-delay: 2.5s;
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .contact-item {
+    background-color: white;
+    color: #8B0000;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contact-item mat-icon {
+    margin-right: 10px;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .menu-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  

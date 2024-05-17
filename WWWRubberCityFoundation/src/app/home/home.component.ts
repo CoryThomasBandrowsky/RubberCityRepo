@@ -48,4 +48,8 @@ export class HomeComponent implements OnInit {
   navigateToEvents(): void {
     this.router.navigate(['/events'])
   }
+
+  navigateToContact(): void{
+    this.router.navigate(['/contact'])
+  }
 }
