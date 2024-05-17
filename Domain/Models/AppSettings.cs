@@ -12,5 +12,8 @@ namespace Domain.Models
         public string TestValue { get; set; }
         public string Environment { get; set; }
         public string DefaultProfilePicture { get; set; }
+        public string PaypalClientId { get; set; }
+        public string PayPalClientSecret { get; set; }
+        public string PayPalMode { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
+using PayPal.Api;
 using RubberCity.Services.Services;
 using System.Threading.Tasks;
 
@@ -63,16 +64,42 @@ namespace RubberCityAPI.Controllers
             return NoContent();
         }
 
-        [HttpPost("AddPayPalDonation")]
-        public async Task<IActionResult> AddPayPalDonation([FromBody] Donation donation)
+        [HttpPost("create-paypal-transaction")]
+        public IActionResult CreatePayPalTransaction([FromBody] Donation donation)
         {
-            var payment = await _payPalService.GetPaymentDetails(donation.PaymentId);
+            var amount = donation.Amount > 0 ? donation.Amount : 1.00m; // Set a default minimum amount
+            var payment = _payPalService.CreatePayment(amount, "Donation to Rubber City Foundation", "http://localhost:4200/donate/success", "http://localhost:4200/donate/cancel");
+
+            return Ok(new { approvalUrl = payment.GetApprovalUrl() });
+        }
+
+        [HttpGet("execute-paypal-transaction")]
+        public async Task<IActionResult> ExecutePayPalTransaction(string paymentId, string PayerID)
+        {
+            var payment = await _payPalService.ExecutePayment(paymentId, PayerID);
             if (payment.state == "approved")
             {
-                await _donationService.AddDonation(donation);
-                return CreatedAtAction(nameof(GetDonationById), new { id = donation.ID }, donation);
+                // Here you can save the donation details in your database
+                return Ok(new { success = true });
             }
-            return BadRequest("Payment not approved");
+            return BadRequest(new { success = false });
         }
+    }
+}
+
+public static class PaymentExtensions
+{
+    public static string GetApprovalUrl(this Payment payment)
+    {
+        var links = payment.links.GetEnumerator();
+        while (links.MoveNext())
+        {
+            var link = links.Current;
+            if (link.rel.ToLower().Trim().Equals("approval_url"))
+            {
+                return link.href;
+            }
+        }
+        return null;
     }
 }

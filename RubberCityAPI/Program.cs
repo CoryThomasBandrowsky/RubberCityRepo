@@ -73,6 +73,8 @@ builder.Services.AddScoped<CaseService>();
 builder.Services.AddScoped<AuthenticationService>();
 builder.Services.AddScoped<EventService>();
 builder.Services.AddScoped<DonationService>();
+builder.Services.AddScoped<PayPalService>();
+
 
 var app = builder.Build();
 app.UseHttpsRedirection();

@@ -36,6 +36,8 @@ export const endpoints = {
         getByID:'http://localhost:30966/donations/getByID',
         update:'http://localhost:30966/donations/update',
         delete:'http://localhost:30966/donations/delete',
-        add: 'http://localhost:30966/donations/add'
+        add: 'http://localhost:30966/donations/add',
+        paypalCreate: 'http://localhost:30966/donations/create-paypal-transaction',
+        paypalExecute: 'http://localhost:30966/donations/execute-paypal-transaction'
     }
 }

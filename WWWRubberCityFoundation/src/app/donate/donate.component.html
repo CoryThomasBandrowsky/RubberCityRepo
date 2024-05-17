@@ -1,42 +1,12 @@
 <div class="container">
-    <div class="header">
-      <div class="welcome-text">
-        <h1>Make a Donation</h1>
-        <h2>Your support helps us continue our mission.</h2>
-      </div>
+  <div class="header">
+    <div class="welcome-text">
+      <h1>Make a Donation</h1>
+      <h2>Your support helps us continue our mission.</h2>
     </div>
-  
-    <div class="donation-form">
-      <form (ngSubmit)="onSubmit()" #donationForm="ngForm">
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>Donor Name</mat-label>
-          <input matInput placeholder="Donor Name" required name="donorName" [(ngModel)]="donation.donorName">
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>Email</mat-label>
-          <input matInput placeholder="Email" required email name="email" [(ngModel)]="donation.email">
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>Amount</mat-label>
-          <input matInput type="number" placeholder="Amount" required name="amount" [(ngModel)]="donation.amount">
-        </mat-form-field>
-  
-        <button mat-raised-button color="primary" type="submit" class="donate-button">Donate</button>
-      </form>
-    </div>
-
-    <div id="paypal-button-container"></div>
-
-    <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="navigateToLogin()">Login</button>
-        <button mat-menu-item (click)="navigateToEvents()">Events</button>
-        <button mat-menu-item (click)="navigateToContact()">Contact</button>
-        <button mat-menu-item>About</button>
-      </mat-menu>
-      <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
-        <mat-icon>menu</mat-icon>
-      </button>
   </div>
-  
+
+  <div class="donation-form">
+    <button (click)="createPayPalTransaction()">Donate with PayPal</button>
+  </div>
+</div>

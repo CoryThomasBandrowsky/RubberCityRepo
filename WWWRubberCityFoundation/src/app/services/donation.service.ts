@@ -8,6 +8,9 @@ import { endpoints } from './endpoints';
   providedIn: 'root'
 })
 export class DonationService {
+
+  amount: number;
+
   constructor(private http: HttpClient) {}
 
   getDonations(): Observable<Donation[]> {
@@ -28,5 +31,16 @@ export class DonationService {
 
   deleteDonation(id: number): Observable<void> {
     return this.http.delete<void>(`${endpoints.donationsController.delete}/${id}`);
+  }
+
+  paypalDonation(amount: number): Observable<{ approvalUrl: string }> {
+    const donation = { amount }; // Create a simple payload with the amount
+    return this.http.post<{ approvalUrl: string }>(endpoints.donationsController.paypalCreate, donation);
+  }
+
+  executePayPalTransaction(paymentId: string, payerId: string): Observable<{ success: boolean }> {
+    return this.http.get<{ success: boolean }>(
+      `${endpoints.donationsController.paypalExecute}?paymentId=${paymentId}&PayerID=${payerId}`
+    );
   }
 }
