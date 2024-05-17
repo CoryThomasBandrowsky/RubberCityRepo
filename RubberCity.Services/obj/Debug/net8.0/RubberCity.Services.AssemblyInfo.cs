@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RubberCity.Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9dceaeb9bcedc22176f478f514806d17d00ed05")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa4ecc2697110af6482c79c33daffeda170b993c")]
 [assembly: System.Reflection.AssemblyProductAttribute("RubberCity.Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RubberCity.Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

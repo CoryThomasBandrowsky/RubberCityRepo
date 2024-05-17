@@ -12,7 +12,7 @@ export class EventService {
     return this.http.get<Event[]>(endpoints.eventsController.getAll);
   }
 
-  getEventById(id: number): Observable<Event> {
+  getEventByID(id: number): Observable<Event> {
     return this.http.get<Event>(`${endpoints.eventsController.getByID}/${id}`);
   }
 

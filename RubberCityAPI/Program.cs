@@ -60,12 +60,16 @@ builder.Services.AddScoped<IRepository<UserMessage>, UserMessagesRepository>(sp 
 builder.Services.AddScoped<IRepository<Case>, CaseRepository>(sp =>
     new CaseRepository(sp.GetRequiredService<RubberCityContext>()));
 
+builder.Services.AddScoped<IEventRepository<Event>, EventRepository>(sp =>
+    new EventRepository(sp.GetRequiredService<RubberCityContext>()));
+
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<HelpRequestService>();
 builder.Services.AddScoped<UserMessageService>();
 builder.Services.AddScoped<DashboardService>();
 builder.Services.AddScoped<CaseService>();
 builder.Services.AddScoped<AuthenticationService>();
+builder.Services.AddScoped<EventService>();
 
 
 var app = builder.Build();

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace RubberCity.Data.Repositories
 {
     public class EventRepository : IEventRepository<Event>

@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace RubberCityAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("[controller]")]
     public class EventsController : ControllerBase
     {
         private readonly EventService _eventEntityService;
@@ -16,7 +16,7 @@ namespace RubberCityAPI.Controllers
             _eventEntityService = eventEntityService;
         }
 
-        [HttpGet]
+        [HttpGet("/events/getAll")]
         public async Task<IActionResult> GetAllEvents()
         {
             var eventEntitys = await _eventEntityService.GetAllEvents();

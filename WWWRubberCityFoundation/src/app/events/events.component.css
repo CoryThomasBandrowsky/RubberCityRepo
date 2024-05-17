@@ -5,94 +5,77 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start; /* Align items at the top */
     align-items: center;
-    padding: 10px;
+    padding: 10px 0;
   }
   
-  .sidebar {
-    height: 100%; /* Full-height */
-    width: 0; /* Initial width of the sidebar */
-    position: fixed; /* Fixed position */
-    z-index: 1; /* Stay on top */
-    top: 0;
-    right: 0; /* Sidebar on the right */
-    background-color: #111; /* Black */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
-    padding-top: 60px; /* Place content 60px from the top */
-  }
-  
-  .sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: white;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .sidebar a:hover {
-    color: #f1f1f1;
-  }
-  
-  .sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #111;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    position: fixed;
-    top: 10px;
-    right: 10px; /* Button on the right */
-  }
-  
-  .openbtn:hover {
-    background-color: #444;
-  }
-  
-  .main-content {
-    transition: margin-right .5s; /* Same transition effect as the sidebar */
-    padding: 16px;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    overflow: auto; /* Scrollable content */
+    padding: 10px;
+    position: relative;
   }
   
-  .events-list {
-    margin-top: 50px;
+  .welcome-text {
+    text-align: center;
+    flex: 1;
   }
   
-  .event-item {
-    background-color: #333;
-    margin: 10px;
+  .welcome-text h1, .welcome-text h2 {
+    opacity: 0;
+    animation: fadeIn 5s ease-out forwards;
+    margin-bottom: 10px;
+    margin-top: 10%;
+  }
+  
+  .welcome-text h1 {
+    animation-delay: 0.5s;
+  }
+  
+  .welcome-text h2 {
+    animation-delay: 2.5s;
+  }
+  
+  .dashboard-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .dashboard-result {
+    background-color: white;
+    color: #8B0000;
+    border-radius: 10px;
     padding: 20px;
-    border-radius: 5px;
+    margin: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
     cursor: pointer;
-    transition: background-color 0.3s;
   }
   
-  .event-item:hover {
-    background-color: #555;
-  }
-  
-  .event-item h3 {
+  .dashboard-result h3 {
     margin: 0;
-    font-size: 24px;
   }
   
-  .event-item p {
+  .dashboard-result p {
     margin: 5px 0;
-    font-size: 16px;
+  }
+  
+  .menu-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
   

@@ -27,6 +27,10 @@ export class EventsComponent implements OnInit {
     this.router.navigate(['/events', eventId]);
   }
 
+  navigateToLogin(): void {
+    this.router.navigate(['/login']);
+  }
+
   openNav(): void {
     document.getElementById("sidebar").style.width = "250px";
     document.getElementById("main").style.marginRight = "250px";
