@@ -8,6 +8,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 import { UsersSuccessComponent } from './users/success/success.component';
 import { HelpRequestSuccessComponent } from './help-request/success/success.component';
 import { UserProfileComponent } from './users/user-profile/user-profile.component';
+import { EventsComponent } from './events/events.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'users/profile', component: UserProfileComponent },
   { path: 'login', component: AuthenticationComponent },
   { path: 'helpers/dashboard', component: HelpersDashboardComponent },
+  { path: 'events', component: EventsComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' } 
 ];
 

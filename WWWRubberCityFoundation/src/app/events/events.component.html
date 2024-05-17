@@ -1,0 +1,27 @@
+<div class="container">
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+      <button class="closebtn" (click)="closeNav()">&#10094;</button>
+      <a routerLink="/login">Login</a>
+      <a routerLink="/contact">Contact</a>
+      <a routerLink="/donate">Donate</a>
+      <a routerLink="/about">About</a>
+    </div>
+  
+    <!-- Main Content -->
+    <div class="main-content" id="main">
+      <!-- Menu Button -->
+      <button class="openbtn" (click)="openNav()">&#9776; Menu</button>
+  
+      <!-- Events List -->
+      <div class="events-list">
+        <h2>Events</h2>
+        <div *ngFor="let event of events" class="event-item" (click)="navigateToEvent(event.id)">
+          <h3>{{ event.name }}</h3>
+          <p>{{ event.description }}</p>
+          <p>{{ event.date | date:'short' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -44,4 +44,8 @@ export class HomeComponent implements OnInit {
   navigateToLogin(): void {
     this.router.navigate(['/login']);
   }
+
+  navigateToEvents(): void {
+    this.router.navigate(['/events'])
+  }
 }

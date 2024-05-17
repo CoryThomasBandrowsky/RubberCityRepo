@@ -21,5 +21,13 @@ export const endpoints = {
     
     authenticationController:{
         login: 'http://localhost:30966/login'
+    },
+
+    eventsController:{
+        getAll:'http://localhost:30966/events/getAll',
+        getByID:'http://localhost:30966/events/getByID',
+        update:'http://localhost:30966/events/update',
+        delete:'http://localhost:30966/events/delete',
+        add: 'http://localhost:30966/events/add'
     }
 }

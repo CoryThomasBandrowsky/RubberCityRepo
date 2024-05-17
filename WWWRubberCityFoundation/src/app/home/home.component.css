@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: space-between; /* Adjusts the distribution of space */
   align-items: center;
-  padding: 10px 0; /* Adjust padding to give some space at the top and bottom */
+  padding: 5px 0; /* Adjust padding to give some space at the top and bottom */
 }
 
 .welcome-text h1, .welcome-text h2, .explanation-text, .above-buttons-text {
@@ -41,7 +41,8 @@
   display: flex;
   gap: 20px;
   justify-content: center; /* Ensures buttons are centered */
-  margin-top: 10px; /* Adds space above the buttons if needed */
+  margin-top: 1%;
+  margin-bottom: 10%; /* Adds space above the buttons if needed */
 }
 
 .round-button {
@@ -67,6 +68,7 @@
 
 .above-buttons-text {
   text-align: center; /* Ensures the text is centered */
-  margin-bottom: 1px; /* Adds spacing between this text and the buttons */
+  margin-bottom: 1%;
+  margin-left: 2%; /* Adds spacing between this text and the buttons */
   animation-delay: 5s;
 }
