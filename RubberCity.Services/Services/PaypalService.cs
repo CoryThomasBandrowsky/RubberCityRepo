@@ -12,9 +12,9 @@ public class PayPalService
     {
         _appSettings = appSettings.Value;
 
-        var clientId = _appSettings.PaypalClientId;
-        var clientSecret = _appSettings.PayPalClientSecret;
-        var mode = _appSettings.PayPalMode;
+        var clientId = _appSettings.PayPal.ClientId;
+        var clientSecret = _appSettings.PayPal.ClientSecret;
+        var mode = _appSettings.PayPal.Mode;
 
         var config = new Dictionary<string, string>
         {

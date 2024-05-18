@@ -65,6 +65,12 @@ builder.Services.AddScoped<IEventRepository<Event>, EventRepository>(sp =>
 builder.Services.AddScoped<IDonationRepository<Donation>, DonationRepository>(sp =>
     new DonationRepository(sp.GetRequiredService<RubberCityContext>()));
 
+builder.Services.AddScoped<IEmailRepository<EmailLog>, EmailRepository>(sp =>
+    new EmailRepository(sp.GetRequiredService<RubberCityContext>()));
+
+builder.Services.AddScoped<IEmailTemplateRepository<EmailTemplate>, EmailTemplateRepository>(sp =>
+    new EmailTemplateRepository(sp.GetRequiredService<RubberCityContext>()));
+
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<HelpRequestService>();
 builder.Services.AddScoped<UserMessageService>();
@@ -74,7 +80,7 @@ builder.Services.AddScoped<AuthenticationService>();
 builder.Services.AddScoped<EventService>();
 builder.Services.AddScoped<DonationService>();
 builder.Services.AddScoped<PayPalService>();
-
+builder.Services.AddScoped<EmailService>();
 
 var app = builder.Build();
 app.UseHttpsRedirection();
