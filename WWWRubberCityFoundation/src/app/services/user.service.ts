@@ -31,4 +31,8 @@ export class UserService {
   ClearState(): void {
     sessionStorage.removeItem(this.userKey);
   }
+
+  uploadProfilePicture(formData: FormData): Observable<User> {
+    return this.http.post<User>(`${endpoints.usersController.saveProfilePicture}`, formData);
+  }
 }

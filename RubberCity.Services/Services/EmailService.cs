@@ -1,6 +1,6 @@
-﻿using Domain.Models;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using RubberCity.Data.Interfaces;
+using Domain.Models;
 using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
@@ -15,25 +15,24 @@ namespace RubberCity.Services.Services
         private readonly IEmailTemplateRepository<EmailTemplate> _emailTemplateRepository;
         private readonly UserService _userService;
 
-        public EmailService(IOptionsSnapshot<AppSettings> appSettings,
-            IEmailRepository<EmailLog> emailRepository,
-            IEmailTemplateRepository<EmailTemplate> emailTemplateRepository,
-            UserService userService,
-            string smtpHost, int smtpPort, string fromAddress, string smtpUser, string smtpPass)
+        public EmailService(IOptions<AppSettings> appSettings,
+                            IEmailRepository<EmailLog> emailRepository,
+                            IEmailTemplateRepository<EmailTemplate> emailTemplateRepository,
+                            UserService userService)
         {
             _appSettings = appSettings.Value;
             _userService = userService;
             _emailRepository = emailRepository;
             _emailTemplateRepository = emailTemplateRepository;
 
-            _smtpClient = new SmtpClient("smtp.gmail.com", 587)
+            _smtpClient = new SmtpClient(_appSettings.Email.SmtpHost, _appSettings.Email.SmtpPort)
             {
-                Credentials = new NetworkCredential(smtpUser, smtpPass),
+                Credentials = new NetworkCredential(_appSettings.Email.SmtpUser, _appSettings.Email.SmtpPass),
                 EnableSsl = true
             };
         }
 
-        public async Task SendEmailAsync(string toAddress, int templateId, object model)
+        public async Task SendEmailAsync(string toAddress, int templateId)
         {
             try
             {
@@ -44,15 +43,15 @@ namespace RubberCity.Services.Services
                     throw new InvalidOperationException("Email template not found");
                 }
 
-                var subject = template.Subject; // You can replace placeholders in the subject if needed
-                var body = template.Body; // You can replace placeholders in the body if needed
+                var subject = template.Subject;
+                var body = template.Body;
 
-                // Send email
-                var mailMessage = new MailMessage(fromAddress, toAddress, subject, body);
-                mailMessage.IsBodyHtml = true; // Assuming the body contains HTML
+                var mailMessage = new MailMessage(fromAddress, toAddress, subject, body)
+                {
+                    IsBodyHtml = true // Assuming the body contains HTML
+                };
                 await _smtpClient.SendMailAsync(mailMessage);
 
-                // Log the sent email
                 var emailLog = new EmailLog
                 {
                     ToAddress = toAddress,
@@ -64,8 +63,6 @@ namespace RubberCity.Services.Services
             }
             catch (Exception ex)
             {
-                // Log the exception
-                // You can inject an ILogger into EmailService and log the error here
                 throw new InvalidOperationException("Failed to send email", ex);
             }
         }

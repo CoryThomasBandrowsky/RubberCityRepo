@@ -1,11 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain.Models
+﻿namespace Domain.Models
 {
     public class AppSettings
     {
@@ -26,7 +19,7 @@ namespace Domain.Models
     public class EmailSettings
     {
         public string SmtpHost { get; set; }
-        public string SmtpPort { get; set; }
+        public int SmtpPort { get; set; }
         public string FromAddress { get; set; }
         public string SmtpUser { get; set; }
         public string SmtpPass { get; set; }

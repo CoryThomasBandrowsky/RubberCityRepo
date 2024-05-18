@@ -51,7 +51,7 @@ export class UsersComponent implements OnInit {
   onSubmit() {
     if (this.userForm.valid) {
       const formData: User = this.userForm.value;
-      formData.ImagePath = "na";
+      formData.imagePath = "na";
       this.userService.CreateUser(formData).subscribe({
         next: (response) => {
           console.log('Help Request Submitted:', response);

@@ -79,5 +79,37 @@ namespace RubberCityAPI.Controllers
             await _userService.DeleteUserAsync(user);
             return NoContent();
         }
+
+        [HttpPost("saveProfilePicture")]
+        public async Task<IActionResult> UploadProfilePicture(IFormFile file, [FromForm] int userId)
+        {
+            if (file == null || file.Length == 0)
+            {
+                return BadRequest("No file uploaded.");
+            }
+
+            var user = await _userService.GetByIdAsync(userId);
+            if (user == null)
+            {
+                return NotFound($"User with ID {userId} not found.");
+            }
+
+            var uploads = Path.Combine("D:\\RubberCityRepo\\WWWRubberCityFoundation\\src\\assets", "profile-pictures");
+            if (!Directory.Exists(uploads))
+            {
+                Directory.CreateDirectory(uploads);
+            }
+
+            var filePath = Path.Combine(uploads, file.FileName);
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(fileStream);
+            }
+
+            user.ImagePath = "assets/profile-pictures/" + file.FileName;
+            await _userService.UpdateUserAsync(user);
+
+            return Ok(user);
+        }
     }
 }

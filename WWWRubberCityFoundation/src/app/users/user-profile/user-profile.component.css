@@ -1,68 +1,79 @@
 .profile-container {
-    background-color: #8B0000; /* Deep red background */
-    color: white;
-    text-align: center;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center the content vertically */
-    align-items: center;
-    padding: 10px;
-  }
-  
-  /* Welcome text styling */
-  .profile-container h1 {
-    margin-bottom: 20px;
-    animation: fadeIn 1s ease-out forwards;
-  }
-  
-  /* Form container styling */
-  .profile-form {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: #8B0000; /* Text color inside the form */
-    width: 100%;
-    max-width: 400px; /* Center form */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center content inside form */
-  }
-  
-  /* Profile picture styling */
-  .profile-picture img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    margin-bottom: 20px;
-  }
-  
-  /* Input field styling */
-  .profile-form input[type="file"] {
-    margin: 20px 0;
-  }
-  
-  /* Button styling similar to other pages */
-  .profile-form button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #8B0000;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  /* Button hover effect */
-  .profile-form button:hover {
-    background-color: #600000;
-  }
-  
-  /* Animation for fadeIn */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
+  background-color: #8B0000; /* Deep red background */
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content vertically */
+  align-items: center;
+  padding: 10px;
+}
+
+/* Welcome text styling */
+.profile-container h1 {
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Form container styling */
+.profile-form {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #8B0000; /* Text color inside the form */
+  width: 100%;
+  max-width: 400px; /* Center form */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content inside form */
+}
+
+/* Profile picture styling */
+.profile-picture img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+/* Input field styling */
+.upload-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.upload-input {
+  display: block;
+  margin: 10px 0 20px 0;
+}
+
+/* Button styling similar to other pages */
+.save-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #8B0000;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Button hover effect */
+.save-button:hover {
+  background-color: #600000;
+}
+
+/* Animation for fadeIn */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.menu-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

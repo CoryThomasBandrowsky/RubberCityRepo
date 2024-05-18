@@ -8,22 +8,50 @@ import { User } from '../../models/user';
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.css']
 })
-export class UserProfileComponent implements OnInit{
+export class UserProfileComponent implements OnInit {
   user: User;
+  selectedFile: File | null = null;
+
   constructor(
     private userService: UserService,
     private router: Router,
-  ){}
+  ) { }
 
   ngOnInit(): void {
     this.user = this.userService.LoadState();
   }
-  
+
   onImageUpload(event: any) {
-    // Handle image upload logic
+    this.selectedFile = event.target.files[0];
   }
 
   saveProfile() {
-    // Handle save profile logic
+    if (this.selectedFile) {
+      const formData = new FormData();
+      formData.append('file', this.selectedFile);
+      formData.append('userId', this.user.id.toString());
+
+      this.userService.uploadProfilePicture(formData).subscribe(response => {
+        // Assuming the response contains the updated user with the image path
+        this.user = response;
+        this.userService.SaveState(this.user); // Save updated user state
+      });
+    }
+  }
+
+  navigateToLogin(): void {
+    this.router.navigate(['/login']);
+  }
+
+  navigateToEvents(): void {
+    this.router.navigate(['/events']);
+  }
+
+  navigateToContact(): void {
+    this.router.navigate(['/contact']);
+  }
+
+  navigateToDonate(): void {
+    this.router.navigate(['/donate']);
   }
 }

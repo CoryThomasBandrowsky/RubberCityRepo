@@ -8,7 +8,8 @@ export const endpoints = {
     },
 
     usersController:{
-        add: 'http://localhost:30966/users/add'
+        add: 'http://localhost:30966/users/add',
+        saveProfilePicture: 'http://localhost:30966/users/saveProfilePicture'
     },
 
     helpRequestController:{

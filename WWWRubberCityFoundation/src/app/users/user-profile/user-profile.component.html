@@ -1,14 +1,23 @@
 <div class="profile-container">
-    <h1>User Profile</h1>
-    <form class="profile-form" (ngSubmit)="saveProfile()">
-      <div class="profile-picture">
-        <img [src]="user?.ImagePath || 'assets/default-profile.png'" alt="Profile Picture">
-      </div>
-      <div>
-        <label for="file">Profile Picture</label>
-        <input type="file" id="file" (change)="onImageUpload($event)">
-      </div>
-      <button type="submit">Save Profile</button>
-    </form>
-  </div>
-  
+  <h1>User Profile</h1>
+  <form class="profile-form" (ngSubmit)="saveProfile()">
+    <div class="profile-picture">
+      <img [src]="user?.imagePath || 'assets/default-profile.png'" alt="Profile Picture">
+    </div>
+    <div>
+      <label for="file" class="upload-label">Profile Picture</label>
+      <input type="file" id="file" (change)="onImageUpload($event)" class="upload-input">
+    </div>
+    <button type="submit" class="save-button">Save Profile</button>
+  </form>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="navigateToLogin()">Login</button>
+    <button mat-menu-item (click)="navigateToEvents()">Events</button>
+    <button mat-menu-item (click)="navigateToContact()">Contact</button>
+    <button mat-menu-item (click)="navigateToDonate()">Donate</button>
+    <button mat-menu-item>About</button>
+  </mat-menu>
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+    <mat-icon>menu</mat-icon>
+  </button>
+</div>

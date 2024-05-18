@@ -1,7 +1,7 @@
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.DependencyInjection;
 using RubberCity.Data.Interfaces;
 using RubberCity.Data.Repositories;
 using RubberCity.Services.Services;
@@ -38,14 +38,16 @@ builder.Services.AddCors(options =>
                       });
 });
 
+// Add configuration options for AppSettings
+builder.Services.Configure<AppSettings>(configuration.GetSection("Values"));
+
 var connectionString = configuration.GetConnectionString("RubberCityMaster");
-builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("Values"));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<RubberCityContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("RubberCityMaster")));
+    options.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<IUserRepository<User>, UserRepository>(sp =>
     new UserRepository(sp.GetRequiredService<RubberCityContext>()));
@@ -83,6 +85,7 @@ builder.Services.AddScoped<PayPalService>();
 builder.Services.AddScoped<EmailService>();
 
 var app = builder.Build();
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
