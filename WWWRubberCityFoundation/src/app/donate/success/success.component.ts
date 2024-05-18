@@ -6,7 +6,7 @@ import { DonationService } from '../../services/donation.service';
   selector: 'app-success',
   template: '<h1>Donation Successful!</h1>'
 })
-export class SuccessComponent implements OnInit {
+export class DonateSuccessComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private donationService: DonationService,

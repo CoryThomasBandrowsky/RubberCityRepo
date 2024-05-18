@@ -65,9 +65,9 @@ namespace RubberCityAPI.Controllers
         }
 
         [HttpPost("create-paypal-transaction")]
-        public IActionResult CreatePayPalTransaction([FromBody] Donation donation)
+        public IActionResult CreatePayPalTransaction(decimal amount)
         {
-            var amount = donation.Amount > 0 ? donation.Amount : 1.00m; // Set a default minimum amount
+            amount = amount > 0 ? amount : 1.00m; // Set a default minimum amount
             var payment = _payPalService.CreatePayment(amount, "Donation to Rubber City Foundation", "http://localhost:4200/donate/success", "http://localhost:4200/donate/cancel");
 
             return Ok(new { approvalUrl = payment.GetApprovalUrl() });

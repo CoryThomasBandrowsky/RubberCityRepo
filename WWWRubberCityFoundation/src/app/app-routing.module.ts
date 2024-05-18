@@ -11,6 +11,8 @@ import { UserProfileComponent } from './users/user-profile/user-profile.componen
 import { EventsComponent } from './events/events.component';
 import { ContactComponent } from './contact/contact.component';
 import { DonateComponent } from './donate/donate.component';
+import { DonateSuccessComponent } from './donate/success/success.component';
+import { DonateCancelComponent } from './donate/cancel/cancel.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -24,6 +26,8 @@ const routes: Routes = [
   { path: 'events', component: EventsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'donate', component: DonateComponent },
+  { path: 'donate/cancel', component: DonateCancelComponent },
+  { path: 'donate/success', component: DonateSuccessComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' } 
 ];
 

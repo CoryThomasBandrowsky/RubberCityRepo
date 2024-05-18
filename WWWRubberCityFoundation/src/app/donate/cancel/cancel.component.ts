@@ -4,4 +4,4 @@ import { Component } from '@angular/core';
   selector: 'app-cancel',
   template: '<h1>Donation Cancelled</h1>'
 })
-export class CancelComponent {}
+export class DonateCancelComponent {}

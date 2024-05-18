@@ -24,9 +24,8 @@ import { UserProfileComponent } from './users/user-profile/user-profile.componen
 import { EventsComponent } from './events/events.component';
 import { ContactComponent } from './contact/contact.component';
 import { DonateComponent } from './donate/donate.component';
-import { CancelComponent } from './cancel/cancel.component';
-import { DonateCancelComponent } from './donate-cancel/donate-cancel.component';
-import { SuccessComponent } from './donate/success/success.component';
+import { DonateSuccessComponent } from './donate/success/success.component';
+import { DonateCancelComponent } from './donate/cancel/cancel.component';
 
 
 @NgModule({
@@ -44,9 +43,8 @@ import { SuccessComponent } from './donate/success/success.component';
     EventsComponent,
     ContactComponent,
     DonateComponent,
-    CancelComponent,
-    DonateCancelComponent,
-    SuccessComponent
+    DonateSuccessComponent,
+    DonateCancelComponent
   ],
   imports: [
     BrowserModule,

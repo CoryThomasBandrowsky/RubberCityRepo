@@ -17,10 +17,13 @@ export class DonateComponent {
   constructor(private donationService: DonationService, private router: Router) {}
 
   createPayPalTransaction(): void {
-    this.donationService.paypalDonation(this.amount).subscribe(response => {
-      window.location.href = response.approvalUrl; // Redirect to PayPal
-    }, error => {
-      console.error('Error creating PayPal transaction', error);
+    this.donationService.paypalDonation(this.amount).subscribe({
+      next: (response) => {
+        window.location.href = response.approvalUrl; // Redirect to PayPal
+      },
+      error: (error) => {
+        console.error('Error creating PayPal transaction', error);
+      }
     });
   }
 
