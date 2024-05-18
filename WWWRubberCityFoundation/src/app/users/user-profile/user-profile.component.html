@@ -10,14 +10,4 @@
     </div>
     <button type="submit" class="save-button">Save Profile</button>
   </form>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="navigateToLogin()">Login</button>
-    <button mat-menu-item (click)="navigateToEvents()">Events</button>
-    <button mat-menu-item (click)="navigateToContact()">Contact</button>
-    <button mat-menu-item (click)="navigateToDonate()">Donate</button>
-    <button mat-menu-item>About</button>
-  </mat-menu>
-  <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
-    <mat-icon>menu</mat-icon>
-  </button>
 </div>

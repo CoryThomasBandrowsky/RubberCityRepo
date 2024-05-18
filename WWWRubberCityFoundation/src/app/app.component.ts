@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { NavigationService } from './services/navigation.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(public navigationService: NavigationService) { }
   title = 'WWWRubberCityFoundation';
 }

@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { DonateComponent } from './donate/donate.component';
 import { DonateSuccessComponent } from './donate/success/success.component';
 import { DonateCancelComponent } from './donate/cancel/cancel.component';
+import { LocalHelpComponent } from './local-help/local-help.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'donate', component: DonateComponent },
   { path: 'donate/cancel', component: DonateCancelComponent },
   { path: 'donate/success', component: DonateSuccessComponent },
+  { path: 'localhelp', component: LocalHelpComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' } 
 ];
 

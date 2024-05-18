@@ -61,7 +61,4 @@ export class AuthenticationComponent {
       this.passwordBlurred = true;
     }
   }
-  navigateToLogin(): void {
-    this.router.navigate(['/login']);
-  }
 }

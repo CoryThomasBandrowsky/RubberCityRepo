@@ -9,13 +9,4 @@ import { Router } from '@angular/router';
 export class ContactComponent {
 
   constructor(private router: Router){ }
-
-
-  navigateToLogin(): void {
-    this.router.navigate(['/login']);
-  }
-
-  navigateToEvents(): void {
-    this.router.navigate(['/events'])
-  }
 }

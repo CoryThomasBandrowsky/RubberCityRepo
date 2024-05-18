@@ -38,20 +38,4 @@ export class UserProfileComponent implements OnInit {
       });
     }
   }
-
-  navigateToLogin(): void {
-    this.router.navigate(['/login']);
-  }
-
-  navigateToEvents(): void {
-    this.router.navigate(['/events']);
-  }
-
-  navigateToContact(): void {
-    this.router.navigate(['/contact']);
-  }
-
-  navigateToDonate(): void {
-    this.router.navigate(['/donate']);
-  }
 }

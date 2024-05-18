@@ -12,14 +12,5 @@
       <button type="submit" [disabled]="loginForm.invalid">Login</button>
       <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
     </form>
-    <button mat-icon-button class="menu-button" [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="navigateToLogin()">Login</button>
-      <button mat-menu-item>Contact</button>
-      <button mat-menu-item>Donate</button>
-      <button mat-menu-item>About</button>
-    </mat-menu>
   </div>
   

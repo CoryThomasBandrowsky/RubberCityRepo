@@ -73,6 +73,9 @@ builder.Services.AddScoped<IEmailRepository<EmailLog>, EmailRepository>(sp =>
 builder.Services.AddScoped<IEmailTemplateRepository<EmailTemplate>, EmailTemplateRepository>(sp =>
     new EmailTemplateRepository(sp.GetRequiredService<RubberCityContext>()));
 
+builder.Services.AddScoped<ILocalHelpRepository<LocalHelp>, LocalHelpRepository>(sp =>
+    new LocalHelpRepository(sp.GetRequiredService<RubberCityContext>()));
+
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<HelpRequestService>();
 builder.Services.AddScoped<UserMessageService>();
@@ -83,6 +86,8 @@ builder.Services.AddScoped<EventService>();
 builder.Services.AddScoped<DonationService>();
 builder.Services.AddScoped<PayPalService>();
 builder.Services.AddScoped<EmailService>();
+builder.Services.AddScoped<LocalHelpService>();
+
 
 var app = builder.Build();
 

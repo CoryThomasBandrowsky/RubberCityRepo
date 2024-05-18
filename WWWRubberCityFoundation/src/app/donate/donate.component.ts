@@ -26,16 +26,4 @@ export class DonateComponent {
       }
     });
   }
-
-  navigateToLogin(): void {
-    this.router.navigate(['/login']);
-  }
-
-  navigateToEvents(): void {
-    this.router.navigate(['/events']);
-  }
-
-  navigateToContact(): void {
-    this.router.navigate(['/contact']);
-  }
 }

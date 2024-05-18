@@ -19,16 +19,6 @@
     <ng-template #noResults>
       <p>No active cases found. Check back later.</p>
     </ng-template>
-
-    <button mat-icon-button class="menu-button" [matMenuTriggerFor]="menu">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="navigateToLogin()">Login</button>
-        <button mat-menu-item>Contact</button>
-        <button mat-menu-item>Donate</button>
-        <button mat-menu-item>About</button>
-      </mat-menu>
   </div>
 
   

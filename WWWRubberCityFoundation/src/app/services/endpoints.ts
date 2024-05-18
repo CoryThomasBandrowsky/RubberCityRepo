@@ -40,5 +40,9 @@ export const endpoints = {
         add: 'http://localhost:30966/donations/add',
         paypalCreate: 'http://localhost:30966/donations/create-paypal-transaction',
         paypalExecute: 'http://localhost:30966/donations/execute-paypal-transaction'
+    },
+
+    localHelpController:{
+        getAll:'http://localhost:30966/localhelp/getAll',
     }
 }

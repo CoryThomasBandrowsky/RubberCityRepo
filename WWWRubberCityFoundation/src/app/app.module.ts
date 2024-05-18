@@ -26,6 +26,8 @@ import { ContactComponent } from './contact/contact.component';
 import { DonateComponent } from './donate/donate.component';
 import { DonateSuccessComponent } from './donate/success/success.component';
 import { DonateCancelComponent } from './donate/cancel/cancel.component';
+import { LocalHelpComponent } from './local-help/local-help.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { DonateCancelComponent } from './donate/cancel/cancel.component';
     ContactComponent,
     DonateComponent,
     DonateSuccessComponent,
-    DonateCancelComponent
+    DonateCancelComponent,
+    LocalHelpComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

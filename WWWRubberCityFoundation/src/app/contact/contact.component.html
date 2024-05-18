@@ -1,4 +1,5 @@
 <div class="container">
+  <app-menu></app-menu>
     <div class="header">
       <div class="welcome-text">
         <h1>Contact Us</h1>
@@ -16,14 +17,5 @@
         <a href="mailto:bandrowskycory@gmail.com">bandrowskycory&#64;gmail.com</a>
       </div>
     </div>
-    <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="navigateToLogin()">Login</button>
-        <button mat-menu-item (click)="navigateToEvents()">Events</button>
-        <button mat-menu-item>Donate</button>
-        <button mat-menu-item>About</button>
-      </mat-menu>
-      <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
-        <mat-icon>menu</mat-icon>
-      </button>
   </div>
   

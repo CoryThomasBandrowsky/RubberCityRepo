@@ -1,31 +1,20 @@
 <div class="container">
-    <div class="header">
-      <div class="welcome-text">
-        <h1>Welcome to the Events Page</h1>
-        <h2>Here are the upcoming events.</h2>
-      </div>
+  <div class="header">
+    <div class="welcome-text">
+      <h1>Welcome to the Events Page</h1>
+      <h2>Here are the upcoming events.</h2>
     </div>
-  
-    <div *ngIf="events && events.length > 0; else noEvents" class="dashboard-results">
-      <div *ngFor="let event of events" class="dashboard-result" (click)="navigateToEvent(event.id)">
-        <h3>{{ event.name }}</h3>
-        <p><strong>Date:</strong> {{ event.date | date:'short' }}</p>
-        <p>{{ event.description }}</p>
-      </div>
-    </div>
-  
-    <ng-template #noEvents>
-      <p>No upcoming events found. Check back later.</p>
-    </ng-template>
-  
-    <button mat-icon-button class="menu-button" [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="navigateToLogin()">Login</button>
-      <button mat-menu-item>Contact</button>
-      <button mat-menu-item>Donate</button>
-      <button mat-menu-item>About</button>
-    </mat-menu>
   </div>
-  
+
+  <div *ngIf="events && events.length > 0; else noEvents" class="dashboard-results">
+    <div *ngFor="let event of events" class="dashboard-result" (click)="navigateToEvent(event.id)">
+      <h3>{{ event.name }}</h3>
+      <p><strong>Date:</strong> {{ event.date | date:'short' }}</p>
+      <p>{{ event.description }}</p>
+    </div>
+  </div>
+
+  <ng-template #noEvents>
+    <p>No upcoming events found. Check back later.</p>
+  </ng-template>
+</div>

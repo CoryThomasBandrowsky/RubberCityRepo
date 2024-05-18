@@ -41,19 +41,4 @@ export class HomeComponent implements OnInit {
   MakeTestUser() {
     this.router.navigate(['/user']);
   }
-  navigateToLogin(): void {
-    this.router.navigate(['/login']);
-  }
-
-  navigateToEvents(): void {
-    this.router.navigate(['/events'])
-  }
-
-  navigateToContact(): void{
-    this.router.navigate(['/contact'])
-  }
-
-  navigateToDonate(): void{
-    this.router.navigate(['/donate'])
-  }
 }

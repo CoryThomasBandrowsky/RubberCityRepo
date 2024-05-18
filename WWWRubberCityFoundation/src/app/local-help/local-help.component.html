@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="header">
+      <div class="welcome-text">
+        <h1>Local Help Resources</h1>
+        <h2>Find the support you need in your local area.</h2>
+      </div>
+    </div>
+  
+    <div *ngIf="localHelpList && localHelpList.length > 0; else noResults" class="local-help-results">
+      <div *ngFor="let help of localHelpList" class="local-help-card">
+        <h3>{{ help.description }}</h3>
+        <p><strong>Link:</strong> <a href="{{ help.linkUrl }}" target="_blank">{{ help.linkUrl }}</a></p>
+        <p><strong>Email:</strong> {{ help.email }}</p>
+        <p><strong>Phone:</strong> {{ help.phone }}</p>
+      </div>
+    </div>
+  
+    <ng-template #noResults>
+      <p>No local help resources found. Check back later.</p>
+    </ng-template>
+  </div>
+  

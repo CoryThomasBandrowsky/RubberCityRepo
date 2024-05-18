@@ -37,10 +37,6 @@ export class HelpersDashboardComponent implements OnInit {
       this.router.navigate(['/login']);
     }
   }
-  
-  navigateToLogin(): void {
-    this.router.navigate(['/login']);
-  }
 
   goToProfile() {
     this.router.navigate(['users/profile']);
