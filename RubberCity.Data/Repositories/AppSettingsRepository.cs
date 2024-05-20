@@ -15,6 +15,6 @@ public class AppSettingsRepository : IAppSettingsRepository
     public async Task<string> GetAppSettingsJsonAsync()
     {
         var appSettings = await _context.AppSettings.FirstOrDefaultAsync();
-        return appSettings?.Json;
+        return appSettings?.json;
     }
 }

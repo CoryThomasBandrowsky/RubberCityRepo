@@ -14,14 +14,11 @@ namespace RubberCityAPI.Controllers
     {
         #region members
         private readonly ILogger<HomeController> _logger;
-        private readonly AppSettings _appSettings;
         #endregion members
         #region controller
-        public HomeController(IOptionsSnapshot<AppSettings> appSettings,
-            ILogger<HomeController> logger,
+        public HomeController(ILogger<HomeController> logger,
             UserService userService)
         {
-            _appSettings = appSettings.Value;
             _logger = logger;
         }
         #endregion controller

@@ -12,11 +12,9 @@ namespace RubberCity.Services.Services
     public class UserService
     {
         private readonly IUserRepository<User> _repo;
-        private readonly AppSettings _appSettings;
 
-        public UserService(IOptionsSnapshot<AppSettings> appSettings, IUserRepository<User> repo)
+        public UserService(IUserRepository<User> repo)
         {
-            _appSettings = appSettings.Value;
             _repo = repo;
         }
 
@@ -35,7 +33,7 @@ namespace RubberCity.Services.Services
             CreatePasswordHash(user.InputPassword, out byte[] passwordHash, out byte[] passwordSalt);
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
-            user.ImagePath = _appSettings.DefaultProfilePicture;            
+            user.ImagePath = AppServiceStatic.GetSetting("DefaultProfilePicture");            
 
             await _repo.Add(user);
         }

@@ -5,21 +5,57 @@ using Microsoft.Extensions.DependencyInjection;
 using RubberCity.Data.Interfaces;
 using RubberCity.Data.Repositories;
 using RubberCity.Services.Services;
+using Newtonsoft.Json.Linq;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
 
 var connectionString = configuration.GetConnectionString("RubberCityMaster");
 
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
 builder.Services.AddDbContext<RubberCityContext>(options =>
     options.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<IAppSettingsRepository, AppSettingsRepository>();
 builder.Services.AddScoped<IAppSettingsService, AppSettingsService>();
+
+using (var scope = builder.Services.BuildServiceProvider().CreateScope())
+{
+    var appSettingsService = scope.ServiceProvider.GetRequiredService<IAppSettingsService>();
+    await appSettingsService.LoadAppSettingsAsync();
+    AppServiceStatic.Initialize(appSettingsService.GetSettingsDictionary());
+}
+
+var allowOrigins = "_allowOrigins";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: allowOrigins,
+                      policyBuilder =>
+                      {
+                          var corsOrigins = AppServiceStatic.GetSetting("CorsOrigins");
+                          if (corsOrigins == "*")
+                          {
+                              policyBuilder
+                                 .AllowAnyOrigin()
+                                 .AllowAnyHeader()
+                                 .AllowAnyMethod();
+                          }
+                          else
+                          {
+                              var specificOrigins = corsOrigins?.Split(",");
+                              if (specificOrigins != null)
+                              {
+                                  policyBuilder
+                                     .WithOrigins(specificOrigins)
+                                     .AllowAnyHeader()
+                                     .AllowAnyMethod();
+                              }
+                          }
+                      });
+});
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IUserRepository<User>, UserRepository>(sp =>
     new UserRepository(sp.GetRequiredService<RubberCityContext>()));
@@ -61,41 +97,6 @@ builder.Services.AddScoped<EmailService>();
 builder.Services.AddScoped<LocalHelpService>();
 
 var app = builder.Build();
-
-using (var scope = app.Services.CreateScope())
-{
-    var appSettingsService = scope.ServiceProvider.GetRequiredService<IAppSettingsService>();
-    await appSettingsService.LoadAppSettingsAsync();
-    AppServiceStatic.Initialize(appSettingsService.GetSettingsDictionary());
-}
-
-var allowOrigins = "_allowOrigins";
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: allowOrigins,
-                      policyBuilder =>
-                      {
-                          var corsOrigins = AppServiceStatic.GetSetting("CorsOrigins");
-                          if (corsOrigins == "*")
-                          {
-                              policyBuilder
-                                 .AllowAnyOrigin()
-                                 .AllowAnyHeader()
-                                 .AllowAnyMethod();
-                          }
-                          else
-                          {
-                              var specificOrigins = corsOrigins?.Split(",");
-                              if (specificOrigins != null)
-                              {
-                                  policyBuilder
-                                     .WithOrigins(specificOrigins)
-                                     .AllowAnyHeader()
-                                     .AllowAnyMethod();
-                              }
-                          }
-                      });
-});
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

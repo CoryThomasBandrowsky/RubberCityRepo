@@ -10,24 +10,26 @@ namespace RubberCity.Services.Services
     public class EmailService
     {
         private readonly SmtpClient _smtpClient;
-        private readonly AppSettings _appSettings;
         private readonly IEmailRepository<EmailLog> _emailRepository;
         private readonly IEmailTemplateRepository<EmailTemplate> _emailTemplateRepository;
         private readonly UserService _userService;
 
-        public EmailService(IOptions<AppSettings> appSettings,
-                            IEmailRepository<EmailLog> emailRepository,
+        public EmailService( IEmailRepository<EmailLog> emailRepository,
                             IEmailTemplateRepository<EmailTemplate> emailTemplateRepository,
                             UserService userService)
         {
-            _appSettings = appSettings.Value;
             _userService = userService;
             _emailRepository = emailRepository;
             _emailTemplateRepository = emailTemplateRepository;
+            var smtpHost = AppServiceStatic.GetSetting("Email.SmtpHost");
+            var smtpPort = Int32.Parse(AppServiceStatic.GetSetting("Email.SmtpPort"));
+            var smtpUser = AppServiceStatic.GetSetting("Email.SmtpUser");
+            var smtpPass = AppServiceStatic.GetSetting("Email.SmtpPass");
 
-            _smtpClient = new SmtpClient(_appSettings.Email.SmtpHost, _appSettings.Email.SmtpPort)
+
+            _smtpClient = new SmtpClient(smtpHost, smtpPort)
             {
-                Credentials = new NetworkCredential(_appSettings.Email.SmtpUser, _appSettings.Email.SmtpPass),
+                Credentials = new NetworkCredential(smtpUser, smtpPass),
                 EnableSsl = true
             };
         }
@@ -36,7 +38,7 @@ namespace RubberCity.Services.Services
         {
             try
             {
-                var fromAddress = _appSettings.Email.FromAddress;
+                var fromAddress = AppServiceStatic.GetSetting("Email.FromAddress");
                 var template = await _emailTemplateRepository.GetById(templateId);
                 if (template == null)
                 {

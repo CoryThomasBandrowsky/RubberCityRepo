@@ -13,4 +13,5 @@ public class RubberCityContext : DbContext
     public DbSet<Case> Case { get; set; }
     public DbSet<Event> Events { get; set; }
     public DbSet<Donation> Donations { get; set; }
+    public DbSet<AppSettings> AppSettings { get; set; }
 }

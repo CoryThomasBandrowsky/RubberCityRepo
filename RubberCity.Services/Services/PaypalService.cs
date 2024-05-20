@@ -6,15 +6,13 @@ using System.Collections.Generic;
 public class PayPalService
 {
     private readonly APIContext _apiContext;
-    private readonly AppSettings _appSettings;
 
-    public PayPalService(IOptionsSnapshot<AppSettings> appSettings)
+    public PayPalService()
     {
-        _appSettings = appSettings.Value;
 
-        var clientId = _appSettings.PayPal.ClientId;
-        var clientSecret = _appSettings.PayPal.ClientSecret;
-        var mode = _appSettings.PayPal.Mode;
+        var clientId = AppServiceStatic.GetSetting("PayPal.ClientId");
+        var clientSecret = AppServiceStatic.GetSetting("PayPal.ClientSecret");
+        var mode = AppServiceStatic.GetSetting("PayPal.Mode");
 
         var config = new Dictionary<string, string>
         {

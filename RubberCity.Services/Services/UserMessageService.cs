@@ -12,11 +12,9 @@ namespace RubberCity.Services.Services
     public class UserMessageService
     {
         private readonly IRepository<UserMessage> _repo;
-        private readonly AppSettings _appSettings;
 
-        public UserMessageService(IOptionsSnapshot<AppSettings> appSettings, IRepository<UserMessage> repo)
+        public UserMessageService(IRepository<UserMessage> repo)
         {
-            _appSettings = appSettings.Value;
             _repo = repo;
         }
 

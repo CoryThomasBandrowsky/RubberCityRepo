@@ -8,11 +8,9 @@ namespace RubberCity.Services.Services
     public class HelpRequestService
     {
         private readonly IRepository<HelpRequestModel> _repo;
-        private readonly AppSettings _appSettings;
 
-        public HelpRequestService(IOptionsSnapshot<AppSettings> appSettings, IRepository<HelpRequestModel> repo)
+        public HelpRequestService(IRepository<HelpRequestModel> repo)
         {
-            _appSettings = appSettings.Value;
             _repo = repo;
         }
 

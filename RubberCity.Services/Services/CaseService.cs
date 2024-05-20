@@ -12,11 +12,9 @@ namespace RubberCity.Services.Services
     public class CaseService
     {
         private readonly IRepository<Case> _repo;
-        private readonly AppSettings _appSettings;
 
-        public CaseService(IOptionsSnapshot<AppSettings> appSettings, IRepository<Case> repo)
+        public CaseService(IRepository<Case> repo)
         {
-            _appSettings = appSettings.Value;
             _repo = repo;
         }
 
