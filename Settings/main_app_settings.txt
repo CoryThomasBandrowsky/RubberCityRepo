@@ -1,0 +1,19 @@
+{
+  "Values": {
+    "TestValue": "test",
+    "Email.SmtpHost": "smtp.gmail.com",
+    "Email.SmtpPort": 587,
+    "Email.SmtpUser": "rubbercityfoundation@gmail.com",
+    "Email.SmtpPass": "yidh qqii csgz nrvk",
+    "Email.FromAddress": "rubbercityfoundation@gmail.com",
+    "DefaultProfilePicture": "D:\\RubberCityRepo\\WWWRubberCityFoundation\\src\\assets",
+    "PayPal.ClientId": "AaBmMR5jI82BxBzBTB8IV_Se7n-n0qcVGd8futctk7Rn26UPcIO53lMYIYKnYFv5Rz3v5F5JDELN2ok3",
+    "PayPal.ClientSecret": "EJQRju_EQFqv4VisL6-28UfHBFHxeosakIBxXbp3arfH_tT112UHm45_H1CDqsLsAQw-_JHk5nNofUEc",
+    "PayPal.Mode": "sandbox"
+  },
+  "Host": {
+    "LocalHttpPort": 44320,
+    "CORS": "*",
+    "CORSCredentials": false
+  }
+}
