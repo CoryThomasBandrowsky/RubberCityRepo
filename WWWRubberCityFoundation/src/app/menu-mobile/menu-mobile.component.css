@@ -1,9 +1,25 @@
-/* menu-mobile.component.css */
-.menu-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+.transparent-toolbar {
+    background: rgba(0, 0, 0, 0.5); /* Translucent background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Evenly space items */
+    padding: 0 5px; /* Reduce padding */
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  
+  button {
     color: white;
-    /* Add any mobile-specific styles here */
+    font-weight: bold;
+    margin: 0 2px; /* Reduce space between buttons */
+    font-size: 12px; /* Reduce font size for visibility */
+  }
+  
+  @media (min-width: 769px) {
+    button {
+      font-size: 14px; /* Larger font for desktop */
+    }
   }
   

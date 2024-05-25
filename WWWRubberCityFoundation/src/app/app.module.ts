@@ -30,6 +30,7 @@ import { LocalHelpComponent } from './local-help/local-help.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenuMobileComponent } from './menu-mobile/menu-mobile.component';
 import { ResponsiveService } from './services/responsive.service';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -65,8 +66,9 @@ import { ResponsiveService } from './services/responsive.service';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    FormsModule
-  ],
+    FormsModule,
+    MatToolbarModule
+    ],
   providers: [ResponsiveService],
   bootstrap: [AppComponent]
 })

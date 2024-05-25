@@ -1,13 +1,11 @@
-<!-- menu-mobile.component.html -->
-<mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="navigationService.navigateToLogin()">Login</button>
-    <button mat-menu-item (click)="navigationService.navigateToEvents()">Events</button>
-    <button mat-menu-item (click)="navigationService.navigateToContact()">Contact</button>
-    <button mat-menu-item (click)="navigationService.navigateToDonate()">Donate</button>
-    <button mat-menu-item (click)="navigationService.navigateToLocalHelp()">Local Help</button>
-    <button mat-menu-item>About</button>
-  </mat-menu>
-  <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
-    <mat-icon>menu</mat-icon>
-  </button>
+<mat-toolbar color="primary" class="transparent-toolbar">
+    <span class="spacer"></span>
+    <button mat-button (click)="navigationService.navigateToLogin()">Login</button>
+    <button mat-button (click)="navigationService.navigateToEvents()">Events</button>
+    <button mat-button (click)="navigationService.navigateToContact()">Contact</button>
+    <button mat-button (click)="navigationService.navigateToDonate()">Donate</button>
+    <button mat-button (click)="navigationService.navigateToLocalHelp()">Local Help</button>
+    <button mat-button>About</button>
+    <span class="spacer"></span>
+  </mat-toolbar>
   
