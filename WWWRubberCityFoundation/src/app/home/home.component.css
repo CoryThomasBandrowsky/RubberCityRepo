@@ -1,21 +1,62 @@
+/* Global styles */
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+  background-image: url('/assets/bg-one.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html, app-root {
+  height: 100%;
+}
+
 .container {
-  background-color: #8B0000; /* Deep red background for the whole page */
+  background-color: transparent;
   color: white;
   text-align: center;
-  height: 100vh;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Adjusts the distribution of space */
+  justify-content: space-between;
   align-items: center;
-  padding: 5px 0; /* Adjust padding to give some space at the top and bottom */
+  padding: 5px 0;
+  padding-bottom: 20px;
 }
 
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: flex;
+}
+
+/* Media query for mobile view */
+@media (max-width: 767px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: flex;
+  }
+}
+
+/* Home component specific styles */
 .welcome-text h1, .welcome-text h2, .explanation-text, .above-buttons-text {
   opacity: 0;
   animation: fadeIn 5s ease-out forwards;
-  margin-bottom: 10px; /* Adds margin to push the text down a bit */
+  margin-bottom: 10px;
   margin-top: 10%;
+  color: #ffffff;
 }
 
 .welcome-text h1 {
@@ -40,9 +81,9 @@
 .button-container {
   display: flex;
   gap: 20px;
-  justify-content: center; /* Ensures buttons are centered */
+  justify-content: center;
   margin-top: 1%;
-  margin-bottom: 10%; /* Adds space above the buttons if needed */
+  margin-bottom: 10%;
 }
 
 .round-button {
@@ -50,25 +91,37 @@
   width: 150px;
   height: 150px;
   font-size: 16px;
+  background-color: #ff6f61;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.round-button:hover {
+  background-color: #ffcccb;
 }
 
 .explanation-text {
-  padding: 0 10%; /* Keeps horizontal padding for better readability */
-  text-align: center; /* Ensures text is centered */
-  max-width: 800px; /* Limits the width of the text block */
-  margin: 20px auto; /* Centers the text block vertically and horizontally */
+  padding: 0 10%;
+  text-align: center;
+  max-width: 800px;
+  margin: 20px auto;
   animation-delay: 3s;
+  color: #d1e8ff;
 }
 
 .explanation-text p {
-  color: white; /* Ensures text color is white */
-  font-size: 16px; /* Sets font size */
-  margin-bottom: 10px; /* Adds spacing between paragraphs */
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .above-buttons-text {
-  text-align: center; /* Ensures the text is centered */
+  text-align: center;
   margin-bottom: 1%;
-  margin-left: 2%; /* Adds spacing between this text and the buttons */
+  margin-left: 2%;
   animation-delay: 5s;
+  color: #d1e8ff;
 }
