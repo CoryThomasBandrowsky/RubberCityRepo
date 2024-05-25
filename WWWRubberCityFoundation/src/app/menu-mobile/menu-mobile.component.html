@@ -1,11 +1,11 @@
 <mat-toolbar color="primary" class="transparent-toolbar">
-    <span class="spacer"></span>
-    <button mat-button (click)="navigationService.navigateToLogin()">Login</button>
-    <button mat-button (click)="navigationService.navigateToEvents()">Events</button>
-    <button mat-button (click)="navigationService.navigateToContact()">Contact</button>
-    <button mat-button (click)="navigationService.navigateToDonate()">Donate</button>
-    <button mat-button (click)="navigationService.navigateToLocalHelp()">Local Help</button>
-    <button mat-button>About</button>
-    <span class="spacer"></span>
+    <div class="button-container">
+      <button mat-button (click)="navigationService.navigateToLogin()">Login</button>
+      <button mat-button (click)="navigationService.navigateToEvents()">Events</button>
+      <button mat-button (click)="navigationService.navigateToContact()">Contact</button>
+      <button mat-button (click)="navigationService.navigateToDonate()">Donate</button>
+      <button mat-button (click)="navigationService.navigateToLocalHelp()">Local Help</button>
+      <button mat-button>About</button>
+    </div>
   </mat-toolbar>
   

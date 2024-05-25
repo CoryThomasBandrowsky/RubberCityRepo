@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 70px; /* Ensure content is not hidden behind toolbar */
+  padding-top: 1%; /* Ensure content is not hidden behind toolbar */
 }
 
 .welcome-text h1, .welcome-text h2, .explanation-text, .above-buttons-text {
@@ -17,19 +17,19 @@
 
 .welcome-text h1 {
   animation-delay: 0.5s;
-  margin-bottom: 10%;
+  margin-bottom: 2%;
 }
 
 .welcome-text h2 {
   animation-delay: 1s; /* Reduced delay */
-  margin-bottom: 10%;
+  margin-bottom: 2%;
 }
 
 .explanation-text {
   text-align: center;
   max-width: 800px;
   animation-delay: 1.5s; /* Reduced delay */
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 
 .explanation-text p {
@@ -39,7 +39,7 @@
 .above-buttons-text {
   text-align: center;
   animation-delay: 2s; /* Reduced delay */
-  margin-top: 10%;
+  margin-top: 5%;
   margin-bottom: 10%;
 }
 
@@ -93,4 +93,9 @@
   transform: scale(0.95); /* Slightly shrinks button */
   box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5), /* Restores original inner shadow */
               0 4px 8px rgba(0, 0, 0, 0.2); /* Restores original outer shadow */
+}
+
+.logo {
+  height: 200px; /* Adjust as needed */
+  margin: 5px;
 }

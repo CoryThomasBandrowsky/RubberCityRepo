@@ -2,18 +2,22 @@
     background: rgba(0, 0, 0, 0.5); /* Translucent background */
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Evenly space items */
-    padding: 0 5px; /* Reduce padding */
+    justify-content: center; /* Center items */
+    padding: 0 10px; /* Add padding to both sides */
   }
   
-  .spacer {
-    flex: 1;
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-right: 2%;
   }
   
   button {
     color: white;
     font-weight: bold;
-    margin: 0 2px; /* Reduce space between buttons */
+    margin: 0 1px; /* Equal margin between buttons */
     font-size: 12px; /* Reduce font size for visibility */
   }
   
