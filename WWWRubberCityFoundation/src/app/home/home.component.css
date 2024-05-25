@@ -78,38 +78,13 @@ html, app-root {
   right: 10px;
 }
 
-.button-container {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 1%;
-  margin-bottom: 10%;
-}
-
-.round-button {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  font-size: 16px;
-  background-color: #ff6f61;
-  color: #ffffff;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.round-button:hover {
-  background-color: #ffcccb;
-}
-
 .explanation-text {
   padding: 0 10%;
   text-align: center;
   max-width: 800px;
   margin: 20px auto;
   animation-delay: 3s;
-  color: #d1e8ff;
+  color: #ffffff;
 }
 
 .explanation-text p {
@@ -123,5 +98,49 @@ html, app-root {
   margin-bottom: 1%;
   margin-left: 2%;
   animation-delay: 5s;
-  color: #d1e8ff;
+  color: #ffffff;
 }
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.round-button {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5), 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.round-button i {
+  margin-right: 8px;
+  font-size: 24px;
+}
+
+.round-button:hover {
+  transform: scale(1.1);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.6), 0 8px 16px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.round-button:active {
+  transform: scale(0.95);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5), 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+

@@ -1,2 +1,3 @@
-<app-menu></app-menu>
+<app-menu *ngIf="!isMobile"></app-menu>
+<app-menu-mobile *ngIf="isMobile"></app-menu-mobile>
 <router-outlet></router-outlet>

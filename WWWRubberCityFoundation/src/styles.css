@@ -27,3 +27,23 @@ app-root {
   justify-content: space-between;
   height: 100%;
 }
+
+/* styles.css or app.component.css */
+
+@media (max-width: 768px) {
+  /* Mobile styles */
+  .menu-button {
+    top: 5px;
+    right: 5px;
+    /* Add any additional mobile-specific styles */
+  }
+}
+
+@media (min-width: 769px) {
+  /* Desktop styles */
+  .menu-button {
+    top: 10px;
+    right: 10px;
+    /* Add any additional desktop-specific styles */
+  }
+}

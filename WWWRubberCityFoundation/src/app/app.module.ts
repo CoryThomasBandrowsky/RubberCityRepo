@@ -28,6 +28,8 @@ import { DonateSuccessComponent } from './donate/success/success.component';
 import { DonateCancelComponent } from './donate/cancel/cancel.component';
 import { LocalHelpComponent } from './local-help/local-help.component';
 import { MenuComponent } from './menu/menu.component';
+import { MenuMobileComponent } from './menu-mobile/menu-mobile.component';
+import { ResponsiveService } from './services/responsive.service';
 
 
 @NgModule({
@@ -48,7 +50,8 @@ import { MenuComponent } from './menu/menu.component';
     DonateSuccessComponent,
     DonateCancelComponent,
     LocalHelpComponent,
-    MenuComponent
+    MenuComponent,
+    MenuMobileComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,7 @@ import { MenuComponent } from './menu/menu.component';
     MatCardModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ResponsiveService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
